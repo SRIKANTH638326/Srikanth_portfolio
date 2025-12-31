@@ -53,7 +53,7 @@ def send_email_to_me(name: str, email: str, message: str):
     msg = EmailMessage()
     msg["Subject"] = "New Contact Form Message"
     msg["From"] = email
-    msg["To"] = "yourmail@gmail.com"   # 👈 YOUR EMAIL ID
+    msg["To"] = "srikanthc061@gmail.com"   # 👈 YOUR EMAIL ID
 
     msg.set_content(
         f"""
