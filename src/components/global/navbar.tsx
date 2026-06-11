@@ -86,8 +86,8 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Harish-Resume.pdf";
-    link.setAttribute("download", "Harish-Resume.pdf");
+    link.href = "/Srikanth_Resume.pdf";
+    link.setAttribute("download", "Srikanth_Resume.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
