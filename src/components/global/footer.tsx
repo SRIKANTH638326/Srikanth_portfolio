@@ -1,0 +1,16 @@
+'use client';
+
+import React from 'react';
+
+const Footer = () => {
+  return (
+    <footer className="bg-gray-900 text-gray-400 text-center text-sm py-6 ">
+      <p>
+        &copy; {new Date().getFullYear()} <span className="text-white font-medium">Srikanth C</span>. 
+        Built with ❤️ .
+      </p>
+    </footer>
+  );
+};
+
+export default Footer;
