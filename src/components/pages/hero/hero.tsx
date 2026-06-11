@@ -205,16 +205,16 @@ const Hero = () => {
                 UI/UX Designer
               </p>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-full sm:max-w-xl mx-auto lg:mx-0 font-light lg:pr-8">
-              UI/UX Designer passionate about creating fast, scalable, and intuitive digital
-              experiences. My work is inspired by the idea that technology should feel simple and elegant, just like the
-world’s best-designed products.
+                UI/UX Designer passionate about creating fast, scalable, and intuitive digital
+                experiences. My work is inspired by the idea that technology should feel simple and elegant, just like the
+                world’s best-designed products.
               </p>
             </div>
 
             {/* Tech Stack */}
             <div ref={stackRef} className="space-y-4 sm:space-y-6">
               <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4">
-                {["Figma","Photoshop", "Adobe XD","Framer"].map(
+                {["Figma", "Photoshop", "Adobe XD", "Framer"].map(
                   (tech, index) => (
                     <span
                       key={tech}
