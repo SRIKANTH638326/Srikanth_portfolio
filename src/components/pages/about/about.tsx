@@ -39,7 +39,7 @@ const About = () => {
           <span className="font-semibold text-gray-900">
             UI/UX Designer
           </span>
-          , Creative and detail-oriented with 1.3+ years of experience designing responsive web and mobile applications. Skilled in user research, wireframing, prototyping, design systems, usability testing, and AI-assisted design workflows. Experienced in leveraging AI tools to accelerate UX research, content generation, user flow creation, design exploration, and productivity enhancement. Passionate about creating intuitive, user-centered digital experiences that drive business growth and customer satisfaction.
+          , Creative and detail-oriented with 1.3+ years of experience designing responsive web and mobile applications. Skilled in user research, wireframing, prototyping, design systems, usability testing, and AI-assisted design workflows. Experienced in leveraging AI tools to accelerate UX research, content generation, user flow creation, design exploration, and productivity enhancement. Passionate about creating intuitive and user-centered digital experiences that drive business growth and customer satisfaction.
         </motion.p>
 
         {/* Call To Action */}
