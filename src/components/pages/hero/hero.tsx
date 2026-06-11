@@ -262,7 +262,7 @@ world’s best-designed products.
     bg-white flex items-center justify-center relative overflow-hidden"
                   >
                     <Image
-                      src="/srikanth_image.png"
+                      src="/Srikanth_image.png"
                       alt="srikanth"
                       fill
                       className="object-contain"
