@@ -381,51 +381,76 @@ const skills = [
 ];
 
 const Skills = () => {
-  const skillRefs = useRef<HTMLDivElement[]>([]);
+  const row1 = skills.slice(0, Math.ceil(skills.length / 2));
+  const row2 = skills.slice(Math.ceil(skills.length / 2));
 
-  useEffect(() => {
-    skillRefs.current.forEach((el, i) => {
-      if (!el) return;
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          delay: i * 0.1,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-          },
-        }
-      );
-    });
-  }, []);
+  const percentages = ["98%", "95%", "92%", "90%", "88%", "85%"];
 
   return (
-    <section className="relative py-16 bg-white overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4">
-          My <span className="text-[#d97706]">Technology</span> Expertise
-        </h2>
+    <section id="skills" className="relative py-20 bg-white overflow-hidden">
+      <style>{`
+        @keyframes scrollLeft {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes scrollRight {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .animate-scroll-left {
+          animation: scrollLeft 40s linear infinite;
+        }
+        .animate-scroll-right {
+          animation: scrollRight 40s linear infinite;
+        }
+        .animate-scroll-left:hover, .animate-scroll-right:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
 
-        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-12">
-          The tools and technologies I use to build high-performance, scalable
-          web applications that deliver exceptional user experiences.
-        </p>
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10 mb-16">
+        <div className="text-center space-y-2">
+          <p className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-4">
+            <span className="text-[#946E1C] mr-2">—</span>My Favorite Tools
+          </p>
+          <h2 className="text-4xl md:text-5xl font-light text-[#946E1C] italic">
+            Exploring the Tools
+          </h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+            Behind My Designs
+          </h2>
+        </div>
+      </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {skills.map((skill, i) => (
+      <div className="relative w-full flex flex-col gap-8 overflow-hidden py-4 mask-image-fade">
+        {/* Row 1 */}
+        <div className="flex w-[200%] animate-scroll-left">
+          {[...row1, ...row1].map((skill, i) => (
             <div
-              key={i}
-              ref={(el) => {
-                if (el) skillRefs.current[i] = el;
-              }}
-              className="flex flex-col items-center justify-center p-6 rounded-2xl bg-white shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500"
+              key={`row1-${i}`}
+              className="flex flex-col items-center justify-center pt-8 pb-10 mx-3 sm:mx-4 w-32 sm:w-40 rounded-2xl bg-gray-50 flex-shrink-0 transition-transform duration-300 hover:-translate-y-2"
             >
-              {skill.icon}
-              <p className="mt-3 text-gray-900 font-medium text-sm">
+              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3">
+                {skill.icon}
+              </div>
+              <p className="text-xs text-gray-600 font-medium text-center">
+                {skill.name}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Row 2 */}
+        <div className="flex w-[200%] animate-scroll-right">
+          {[...row2, ...row2].map((skill, i) => (
+            <div
+              key={`row2-${i}`}
+              className="flex flex-col items-center justify-center pt-8 pb-10 mx-3 sm:mx-4 w-32 sm:w-40 rounded-2xl bg-gray-50 flex-shrink-0 transition-transform duration-300 hover:-translate-y-2"
+            >
+              <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3">
+                {skill.icon}
+              </div>
+              <p className="text-xs text-gray-600 font-medium text-center">
                 {skill.name}
               </p>
             </div>
@@ -437,3 +462,4 @@ const Skills = () => {
 };
 
 export default Skills;
+

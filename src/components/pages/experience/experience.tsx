@@ -2,100 +2,84 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import Image from "next/image";
 
 const Experience = () => {
   const experiences = [
     {
-      role: "UI/UX Designer",
+      role: "UI/UX DESIGNER",
       company: "Zikrabyte Solutions",
       duration: "Jan 2025 – Present",
-      description:
-        "Responsible for designing user interfaces for web and mobile applications. Creating wireframes, mockups, and prototypes to communicate design ideas.",
-      color: "apple",
     },
     {
-      role: "UI/UX Design & Development",
+      role: "UI/UX DESIGN & DEVELOPMENT",
       company: "Freelance",
       duration: "2024 – 2025",
-      description:
-        "Responsible for designing user interfaces for web and mobile applications. Creating wireframes, mockups, and prototypes to communicate design ideas.",
-      color: "green",
     },
   ];
-  const colorClasses: Record<string, { bg: string; text: string }> = {
-    apple: { bg: "bg-amber-50", text: "text-[#d97706]" },
-    green: { bg: "bg-green-100", text: "text-green-600" },
-    red: { bg: "bg-red-100", text: "text-red-600" },
-    yellow: { bg: "bg-yellow-100", text: "text-yellow-600" },
-  };
 
   return (
     <section
       id="experience"
-      className="bg-white py-4 sm:py-8 lg:py-8 relative overflow-hidden"
+      className="bg-white py-20 lg:py-32 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <motion.h2
-            className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Experience
-          </motion.h2>
 
-          {/* Animated line below heading */}
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-center">
+          {/* Left Column - Text and List */}
           <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mt-4 h-[2px] w-24 bg-black mx-auto origin-left"
-          />
-        </div>
+            className="flex flex-col"
+          >
+            <h2 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 uppercase tracking-tight leading-[1.1]">
+              Experience
+            </h2>
+            <p className="text-gray-600 text-lg sm:text-xl leading-relaxed max-w-xl mb-12">
+              From a curious creator to a full-time designer, crafting purposeful and user-centered digital experiences.
+            </p>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              className="group relative p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-gray-300 transition-all shadow-sm hover:shadow-xl cursor-pointer"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-            >
-              {/* Icon */}
-              <div className="flex justify-center mb-6">
+            <div className="flex flex-col w-full">
+              {experiences.map((exp, index) => (
                 <div
-                  className={`${colorClasses[exp.color].bg} ${
-                    colorClasses[exp.color].text
-                  } p-4 rounded-full group-hover:bg-black group-hover:text-white transition-colors`}
+                  key={index}
+                  className="flex flex-col sm:flex-row sm:items-center justify-between py-6 sm:py-8 border-t border-gray-200 gap-2 sm:gap-4 group"
                 >
-                  <Briefcase size={32} />
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 uppercase tracking-wide transition-colors">
+                    {exp.role}
+                  </h3>
+                  <div className="flex flex-col sm:items-end">
+                    <p className="text-[#946E1C] font-semibold text-lg">
+                      {exp.company}
+                    </p>
+                    <p className="text-gray-500 text-sm font-medium mt-1">
+                      {exp.duration}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              ))}
+              <div className="border-t border-gray-200"></div>
+            </div>
+          </motion.div>
 
-              <h3
-                className={`text-2xl sm:text-3xl font-semibold ${
-                  colorClasses[exp.color].text
-                } text-center`}
-              >
-                {exp.role}
-              </h3>
-
-              <p className="mt-2 text-gray-700 text-center text-lg font-medium">
-                {exp.company} | {exp.duration}
-              </p>
-              <p className="mt-4 text-gray-600 text-center leading-relaxed text-base sm:text-lg">
-                {exp.description}
-              </p>
-            </motion.div>
-          ))}
+          {/* Right Column - Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative w-full h-[350px] sm:h-[400px] lg:h-[500px] rounded-[32px] overflow-hidden shadow-xl"
+          >
+            <Image
+              src="/experience_workspace.png"
+              alt="Experience Journey"
+              fill
+              className="object-cover object-center"
+            />
+          </motion.div>
         </div>
       </div>
     </section>

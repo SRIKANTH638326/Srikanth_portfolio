@@ -2,16 +2,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Send,
-  Mail,
-  MapPin,
-  Phone,
-  Linkedin,
-  Github,
-  Instagram,
-  MessageCircle,
-} from "lucide-react";
+import { Linkedin, Github, Instagram, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "sonner";
 
@@ -23,7 +14,6 @@ const Contact = () => {
   ) => {
     const { name, value } = e.target;
     if (name === "name") {
-      // Only allow alphabets and spaces
       const cleanedValue = value.replace(/[^a-zA-Z\s]/g, "");
       setForm({ ...form, [name]: cleanedValue });
     } else {
@@ -67,130 +57,77 @@ const Contact = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="relative w-full py-18 sm:py-14 lg:py-14 bg-gradient-to-b from-gray-50 to-white"
-    >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        {/* Title */}
+    <section id="contact" className="w-full bg-white py-20 lg:py-32">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        {/* Left Column */}
         <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="flex flex-col justify-center"
         >
-          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-gray-900 mb-6">
-            Get In Touch
+          <h2 className="text-5xl lg:text-6xl font-normal text-gray-900 mb-12 tracking-tight">
+            Get in touch
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-            Have a project in mind or want to discuss opportunities? Let's build
-            something amazing together.
-          </p>
-        </motion.div>
 
-        {/* Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Contact Information */}
-          <motion.div
-            className="bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition p-6 sm:p-10"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Let's Talk
-            </h3>
-            <p className="text-gray-600 mb-10 text-lg leading-relaxed">
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your vision.
-            </p>
-
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="bg-gray-100 p-3 rounded-full">
-                  <Mail className="text-gray-700" size={22} />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">Email</h4>
-                  <p className="text-gray-600">srikanthc061@gmail.com</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-gray-100 p-3 rounded-full">
-                  <MapPin className="text-gray-700" size={22} />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">Location</h4>
-                  <p className="text-gray-600">Bengaluru, India</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="bg-gray-100 p-3 rounded-full">
-                  <Phone className="text-gray-700" size={22} />
-                </div>
-                <div>
-                  <h4 className="font-medium text-gray-900">Phone</h4>
-                  <p className="text-gray-600">+91 8110813471</p>
-                </div>
-              </div>
+          <div className="space-y-8">
+            <div>
+              <p className="text-gray-500 text-sm mb-1">Email:</p>
+              <p className="text-gray-900 text-base font-medium">srikanthc061@gmail.com</p>
             </div>
-
-            {/* Socials */}
-            <div className="mt-10">
-              <h4 className="font-medium text-gray-900 mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
+            
+            <div>
+              <p className="text-gray-500 text-sm mb-1">Phone:</p>
+              <p className="text-gray-900 text-base font-medium">+91 8110813471</p>
+            </div>
+            
+            <div>
+              <p className="text-gray-500 text-sm mb-1">Address:</p>
+              <p className="text-gray-900 text-base font-medium leading-relaxed max-w-sm">
+                Bengaluru, India
+              </p>
+            </div>
+            
+            <div>
+              <p className="text-gray-500 text-sm mb-3">Follow us</p>
+              <div className="flex space-x-3">
                 {[
-                  {
-                    icon: <Linkedin size={20} />,
-                    href: "https://www.linkedin.com/in/srikanth-c-270b00347/",
-                  },
-                  {
-                    icon: <Github size={20} />,
-                    href: "https://github.com/SRIKANTH638326",
-                  },
-                  {
-                    icon: <Instagram size={20} />,
-                    // href: "https://www.instagram.com/harish__robikar",
-                  },
-                  {
-                    icon: <MessageCircle size={20} />,
-                    href: "https://wa.me/918110813471",
-                  },
+                  { icon: <Instagram size={18} fill="currentColor" />, href: "#" },
+                  { icon: <Github size={18} fill="currentColor" />, href: "https://github.com/SRIKANTH638326" },
+                  { icon: <Linkedin size={18} fill="currentColor" />, href: "https://www.linkedin.com/in/srikanth-c-270b00347/" },
+                  { icon: <Twitter size={18} fill="currentColor" />, href: "#" },
                 ].map((social, idx) => (
                   <a
                     key={idx}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-gray-100 hover:bg-black hover:text-white text-gray-700 p-3 rounded-full transition cursor-pointer"
+                    className="bg-gray-900 hover:bg-gray-700 text-white p-2.5 rounded-full transition flex items-center justify-center cursor-pointer"
                   >
                     {social.icon}
                   </a>
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
+        </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            className="bg-white/70 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-md hover:shadow-xl transition p-6 sm:p-10"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Send Me a Message
-            </h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Right Column - Form */}
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="flex flex-col justify-center"
+        >
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* Name */}
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-medium text-gray-900 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Your Name
                 </label>
@@ -198,64 +135,65 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Name"
+                  placeholder="Your full name"
                   value={form.name}
                   onChange={handleChange}
                   required
-                  className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-gray-900 focus:ring-2 focus:ring-black focus:outline-none"
+                  className="w-full px-5 py-4 bg-[#F5F5F5] border-none rounded-2xl text-gray-900 focus:ring-2 focus:ring-black outline-none placeholder-gray-400 text-sm"
                 />
               </div>
 
+              {/* Email */}
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-900 mb-2"
+                  className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Your Email
+                  Email address
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="name@example.com"
+                  placeholder="Your email address"
                   value={form.email}
                   onChange={handleChange}
                   required
-                  className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-gray-900 focus:ring-2 focus:ring-black focus:outline-none"
+                  className="w-full px-5 py-4 bg-[#F5F5F5] border-none rounded-2xl text-gray-900 focus:ring-2 focus:ring-black outline-none placeholder-gray-400 text-sm"
                 />
               </div>
+            </div>
 
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-900 mb-2"
-                >
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder="Hello, I would like to talk about..."
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="w-full p-4 border border-gray-200 rounded-xl bg-gray-50 text-gray-900 focus:ring-2 focus:ring-black focus:outline-none"
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-black text-white py-4 rounded-xl font-medium hover:bg-gray-900 transition flex items-center justify-center gap-2 cursor-pointer"
+            {/* Message */}
+            <div>
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-700 mb-2"
               >
-                <Send size={18} />
-                Send Message
-              </button>
-            </form>
-          </motion.div>
-        </div>
-      </div>
+                Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Write something..."
+                value={form.message}
+                onChange={handleChange}
+                required
+                rows={6}
+                className="w-full px-5 py-5 bg-[#F5F5F5] border-none rounded-3xl text-gray-900 focus:ring-2 focus:ring-black outline-none placeholder-gray-400 resize-none text-sm"
+              />
+            </div>
 
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full bg-[#1A1A1A] text-white py-4 rounded-2xl font-medium hover:bg-black transition cursor-pointer text-sm"
+            >
+              Send Message
+            </button>
+          </form>
+        </motion.div>
+      </div>
     </section>
   );
 };

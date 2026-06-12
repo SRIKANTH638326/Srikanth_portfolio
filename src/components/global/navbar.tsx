@@ -109,7 +109,7 @@ const Navbar = () => {
         className="fixed w-full z-50 bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center py-2">
+          <div className="flex justify-between items-center py-3">
             {/* Logo */}
             {/* Logo */}
             {/* Logo */}
@@ -120,9 +120,9 @@ const Navbar = () => {
             >
               <span
                 className="text-gray-900 
-               text-xl sm:text-2xl font-bold tracking-tight"
+               text-base sm:text-lg font-bold tracking-tight"
               >
-               SRIKANTH
+                Srikanth
               </span>
             </a>
 
@@ -135,19 +135,17 @@ const Navbar = () => {
                     if (el) linksRef.current[i] = el;
                   }}
                   href={item.href}
-                  className={`relative text-sm font-medium transition-all duration-300 group cursor-pointer ${
-                    activeSection === item.href.replace("#", "")
-                      ? "text-[#d97706]"
-                      : "text-gray-600 hover:text-[#d97706]"
-                  }`}
+                  className={`relative text-sm font-medium transition-all duration-300 group cursor-pointer ${activeSection === item.href.replace("#", "")
+                      ? "text-[#946E1C]"
+                      : "text-gray-600 hover:text-[#946E1C]"
+                    }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#d97706] transition-all duration-300 ${
-                      activeSection === item.href.replace("#", "")
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#946E1C] transition-all duration-300 ${activeSection === item.href.replace("#", "")
                         ? "w-full"
                         : "w-0 group-hover:w-full"
-                    }`}
+                      }`}
                   ></span>
                 </a>
               ))}
@@ -180,18 +178,16 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${
-          menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden transition-opacity duration-300 ${menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setMenuOpen(false)}
       />
 
       {/* Mobile Menu Panel */}
       <div
         ref={mobileMenuRef}
-        className={`fixed top-0 right-0 w-80 max-w-sm h-full bg-white/95 backdrop-blur-xl shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-in-out ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 w-80 max-w-sm h-full bg-white/95 backdrop-blur-xl shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Mobile Menu Header */}
         <div className="flex justify-between items-center p-6 border-b border-gray-200">
@@ -223,11 +219,10 @@ const Navbar = () => {
                 key={i}
                 href={item.href}
                 onClick={() => setMenuOpen(false)}
-                className={`flex items-center justify-between text-lg font-medium transition-all duration-200 py-2 cursor-pointer ${
-                  activeSection === item.href.replace("#", "")
-                    ? "text-[#d97706]"
-                    : "text-gray-600 hover:text-[#d97706]"
-                }`}
+                className={`flex items-center justify-between text-lg font-medium transition-all duration-200 py-2 cursor-pointer ${activeSection === item.href.replace("#", "")
+                    ? "text-[#946E1C]"
+                    : "text-gray-600 hover:text-[#946E1C]"
+                  }`}
               >
                 <span>{item.name}</span>
                 <ExternalLink size={18} className="text-gray-400" />
@@ -252,3 +247,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

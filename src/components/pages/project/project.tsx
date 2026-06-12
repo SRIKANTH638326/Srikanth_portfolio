@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -138,6 +139,14 @@ const Projects = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = React.useRef<HTMLDivElement>(null);
 
+  const colors = [
+    "bg-[#F3CE9E]", // Pastel Orange
+    "bg-[#B4D2A6]", // Pastel Green
+    "bg-[#BDB6DF]", // Pastel Purple
+    "bg-[#F4A5AE]", // Pastel Pink
+    "bg-[#98C1D9]", // Pastel Blue
+  ];
+
   const visibleProjects = showAll ? projects : projects.slice(0, 6);
 
   const handleScroll = () => {
@@ -195,66 +204,42 @@ const Projects = () => {
                 onClick={() =>
                   window.open(project.link, "_blank", "noopener,noreferrer")
                 }
-                className="min-w-full sm:min-w-0 snap-center sm:snap-none bg-white rounded-2xl shadow-lg border border-gray-100 overflow-visible flex flex-col cursor-pointer transition-shadow"
+                className="min-w-full sm:min-w-0 snap-center sm:snap-none bg-transparent hover:bg-white hover:shadow-xl p-4 -m-4 rounded-[24px] transition-all duration-300 flex flex-col cursor-pointer group"
               >
-                {/* Image with badge */}
-                <div className="relative w-full h-48 sm:h-56 bg-gray-50 rounded-t-2xl overflow-hidden">
-                  <motion.div className="w-full h-full p-4">
-                      <Image
-                        src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-contain"
-                    />
-                  </motion.div>
-                  <span className="absolute top-3 left-3 bg-gray-900 text-white text-[10px] sm:text-xs font-semibold uppercase tracking-wide px-3 py-1 rounded-full shadow-md z-10">
-                    {project.type}
-                  </span>
+                {/* Image with cutout button */}
+                <div className="relative w-full h-56 sm:h-[260px] rounded-[20px] overflow-hidden mb-5">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Arrow Button */}
+                  <div className="absolute bottom-3 right-3">
+                    <div className={`w-12 h-12 rounded-full border-[4px] border-white flex items-center justify-center text-white transition-transform group-hover:-rotate-12 group-hover:scale-110 shadow-sm ${colors[index % colors.length]}`}>
+                      <ArrowUpRight strokeWidth={2.5} size={20} />
+                    </div>
+                  </div>
                 </div>
 
                 {/* Content */}
-                <div className="flex-1 flex flex-col p-4 relative">
-                  {/* Title with its own tooltip */}
-                  <div className="group relative mb-3">
-                    <h3 className="text-xl font-semibold line-clamp-2 cursor-help">
-                      {project.title}
-                    </h3>
-                    <div className="absolute bottom-full left-0 mb-2 w-max max-w-[250px] p-2 bg-gray-900 shadow-2xl text-white text-[10px] rounded-lg opacity-0 group-hover:opacity-100 transition-all invisible group-hover:visible translate-y-1 group-hover:translate-y-0 z-50">
-                      {project.title}
-                      <div className="absolute bottom-[-4px] left-4 w-2 h-2 bg-gray-900 rotate-45" />
-                    </div>
-                  </div>
-                  
-                  {/* Description with its own tooltip */}
-                  <div className="group relative flex-1 mb-5">
-                    <p className="text-gray-600 text-sm line-clamp-7 cursor-help">
-                      {project.description}
-                    </p>
-                    <div className="absolute bottom-full left-0 mb-2 w-full p-4 bg-gray-900 shadow-2xl text-white text-xs rounded-xl opacity-0 group-hover:opacity-100 transition-all invisible group-hover:visible translate-y-1 group-hover:translate-y-0 z-50 pointer-events-none">
-                      <p className="line-clamp-none">{project.description}</p>
-                      <div className="absolute bottom-[-6px] left-6 w-3 h-3 bg-gray-900 rotate-45" />
-                    </div>
-                  </div>
+                <div className="flex-1 flex flex-col relative px-2 mt-2">
+                  {/* Title */}
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 flex-1">
+                    {project.title.split("–")[0].trim()}
+                  </h3>
 
                   {/* Tech badges */}
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((t, i) => (
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {project.tech.slice(0, 3).map((t, i) => (
                       <span
                         key={i}
-                        className="bg-gray-100 text-gray-800 text-xs font-medium px-3 py-1 rounded-full"
+                        className={`text-gray-700 text-[10px] font-bold uppercase px-3 py-1.5 rounded-md ${colors[(index + i) % colors.length]}`}
                       >
                         {t}
                       </span>
                     ))}
                   </div>
-
-                  {/* Link */}
-                  <motion.div
-                    whileHover={{ x: 4 }}
-                    className="text-[#d97706] text-sm font-semibold hover:text-[#b45309] transition cursor-pointer inline-block w-fit"
-                  >
-                    View Project →
-                  </motion.div>
                 </div>
               </motion.div>
             ))}
@@ -267,7 +252,7 @@ const Projects = () => {
             <div
               key={i}
               className={`h-1.5 rounded-full transition-all duration-300 ${
-                activeIndex === i ? "w-6 bg-[#d97706]" : "w-2 bg-gray-300"
+                activeIndex === i ? "w-6 bg-[#946E1C]" : "w-2 bg-gray-300"
               }`}
             />
           ))}
@@ -292,3 +277,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

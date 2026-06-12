@@ -72,3 +72,4 @@ const SplashLoader = ({ onComplete }: { onComplete: () => void }) => {
 };
 
 export default SplashLoader;
+

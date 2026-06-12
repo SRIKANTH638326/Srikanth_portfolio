@@ -2,319 +2,125 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React from "react";
 import Image from "next/image";
 
-// Register ScrollTrigger plugin
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
-
 const Hero = () => {
-  const heroRef = useRef<HTMLElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const subtitleRef = useRef<HTMLDivElement>(null);
-  const buttonsRef = useRef<HTMLDivElement>(null);
-  const circleRef = useRef<HTMLDivElement>(null); // <-- fixed
-  const backgroundRef = useRef<HTMLDivElement>(null);
-  const stackRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Set initial states
-      gsap.set(
-        [
-          textRef.current,
-          subtitleRef.current,
-          buttonsRef.current,
-          stackRef.current,
-        ],
-        {
-          opacity: 0,
-          y: 60,
-        }
-      );
-
-      gsap.set(imageRef.current, {
-        opacity: 0,
-        scale: 0.8,
-        rotation: 5,
-      });
-
-      if (circleRef.current) {
-        gsap.set(Array.from(circleRef.current.children), {
-          scale: 0,
-          opacity: 0,
-        });
-      }
-
-      // Main timeline
-      const tl = gsap.timeline({
-        delay: 0.3,
-      });
-
-      // Animate background circles first
-      if (circleRef.current) {
-        tl.to(Array.from(circleRef.current.children), {
-          scale: 1,
-          opacity: 1,
-          duration: 1.5,
-          stagger: 0.3,
-          ease: "back.out(1.4)",
-        });
-      }
-      // Animate main heading
-      tl.to(
-        textRef.current,
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          ease: "power3.out",
-        },
-        "-=1"
-      )
-        // Animate subtitle
-        .to(
-          subtitleRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: "power3.out",
-          },
-          "-=0.7"
-        )
-        // Animate tech stack
-        .to(
-          stackRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.5"
-        )
-        // Animate buttons
-        .to(
-          buttonsRef.current,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.4"
-        )
-        // Animate image
-        .to(
-          imageRef.current,
-          {
-            opacity: 1,
-            scale: 1,
-            rotation: 0,
-            duration: 1.4,
-            ease: "power3.out",
-          },
-          "-=1"
-        );
-
-      // Floating animation for the image
-      gsap.to(imageRef.current, {
-        y: -15,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        delay: 2.5,
-      });
-
-      // Parallax effect on scroll
-      gsap.to(backgroundRef.current, {
-        yPercent: -30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
-
-      // Button hover animations
-      const buttons = buttonsRef.current?.querySelectorAll("a");
-      buttons?.forEach((button) => {
-        button.addEventListener("mouseenter", () => {
-          gsap.to(button, {
-            scale: 1.03,
-            y: -2,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        });
-
-        button.addEventListener("mouseleave", () => {
-          gsap.to(button, {
-            scale: 1,
-            y: 0,
-            duration: 0.4,
-            ease: "power2.out",
-          });
-        });
-      });
-    }, heroRef);
-
-    return () => ctx.revert();
-  }, []);
+  const tools = ["Figma", "Photoshop", "Adobe XD", "Framer"];
 
   return (
-    <section
-      ref={heroRef}
-      className="relative min-h-[650px] w-full bg-white overflow-hidden flex flex-col pt-24"
-    >
-      {/* Presentation Banner */}
-      <div className="w-full px-4 sm:px-8 mb-12">
-        <div className="w-full bg-[#EFECE6] relative overflow-hidden flex flex-col items-center justify-center min-h-[300px] md:min-h-[450px] rounded-md shadow-sm border border-gray-200">
-          {/* Inner border */}
-          <div className="absolute inset-4 sm:inset-6 md:inset-8 border-[1px] border-[#8199B1]/60 rounded-sm pointer-events-none"></div>
+    <div className="w-full flex flex-col">
 
-          {/* Background Text PORTFOLIO */}
+      {/* ══════════════════════════════════════════
+          Section 1 — Presentation Banner
+      ══════════════════════════════════════════ */}
+      <div className="w-full bg-white px-6 sm:px-10 lg:px-16 pt-28 pb-10">
+        <div className="w-full bg-[#EFECE6] relative overflow-hidden flex flex-col items-center justify-center min-h-[300px] md:min-h-[400px] lg:min-h-[460px] rounded-2xl border border-gray-200 shadow-sm">
+
+          {/* Inner border frame */}
+          <div className="absolute inset-5 sm:inset-7 border border-[#8199B1]/40 rounded-xl pointer-events-none" />
+
+          {/* PORTFOLIO watermark */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-            <h1 
-              className="text-[80px] sm:text-[140px] md:text-[180px] lg:text-[220px] font-serif text-transparent leading-none" 
-              style={{ WebkitTextStroke: '2px rgba(255, 255, 255, 0.9)' }}
+            <span
+              className="text-[80px] sm:text-[140px] md:text-[180px] lg:text-[230px] font-serif text-transparent leading-none tracking-widest"
+              style={{ WebkitTextStroke: "2px rgba(255,255,255,0.85)" }}
             >
               PORTFOLIO
-            </h1>
+            </span>
           </div>
 
-          {/* Foreground Text */}
-          <div className="relative z-10 flex flex-col items-center text-center px-4">
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#1A1A1A] tracking-tight">
+          {/* Foreground content */}
+          <div className="relative z-10 flex flex-col items-center text-center px-6 py-8">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-[#1A1A1A] tracking-tight">
               UI/UX Designer
             </h2>
-            <p className="mt-4 md:mt-6 text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] text-[#333333] uppercase">
+            <p className="mt-5 text-[10px] sm:text-xs font-bold tracking-[0.5em] text-[#555] uppercase">
               Presentation
             </p>
-
-            {/* Blue Pill */}
-            <div className="mt-10 sm:mt-12 bg-[#1D63A6] text-white text-[10px] sm:text-xs px-6 py-2 md:py-2.5 rounded-full font-medium tracking-wide">
-              www.srikanth.com
-            </div>
           </div>
         </div>
       </div>
-      <div
-        ref={backgroundRef}
-        className="absolute inset-0 pointer-events-none overflow-hidden "
-      >
-        {/* <div ref={circleRef} className="absolute inset-0 overflow-hidden ">
-          <div className="absolute top-0 left-0 w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] bg-gradient-to-br from-amber-50 via-orange-50 to-slate-50 rounded-full blur-3xl opacity-40 -translate-x-20 sm:-translate-x-32 md:-translate-x-48 lg:-translate-x-64 -translate-y-20 sm:-translate-y-32 md:-translate-y-48 lg:-translate-y-64"></div>
 
-          <div className="absolute top-1/3 right-0 w-[180px] h-[180px] sm:w-[250px] sm:h-[250px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px] bg-gradient-to-br from-orange-50 via-amber-50 to-slate-50 rounded-full blur-3xl opacity-35 translate-x-16 sm:translate-x-24 md:translate-x-32 lg:translate-x-40"></div>
+      {/* ══════════════════════════════════════════
+          Section 2 — Personal Intro
+      ══════════════════════════════════════════ */}
+      <div className="w-full bg-white relative overflow-hidden">
+        {/* Decorative dots */}
+        <div className="absolute top-16 left-[48%] w-2.5 h-2.5 rounded-full bg-[#946E1C]/30 pointer-events-none" />
+        <div className="absolute top-24 right-[22%] w-3 h-3 rounded-full bg-[#946E1C]/40 pointer-events-none" />
+        <div className="absolute bottom-16 right-[12%] w-2 h-2 rounded-full bg-gray-300 pointer-events-none" />
 
-          <div className="absolute bottom-0 left-1/2 w-[160px] h-[160px] sm:w-[200px] sm:h-[200px] md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px] bg-gradient-to-br from-slate-50 via-amber-50 to-orange-50 rounded-full blur-3xl opacity-30 -translate-x-1/2 translate-y-20 sm:translate-y-24 md:translate-y-32 lg:translate-y-40"></div>
-        </div> */}
-      </div>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-6 md:px-8 lg:px-8 xl:px-8 box-border flex-1 flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center py-12 sm:py-16 md:py-16 lg:py-16 w-full">
-          {/* Left Side - Content */}
-          <div className="text-center lg:text-left space-y-6 sm:space-y-8 md:space-y-10 order-2 lg:order-1 mt-12">
-            <div ref={textRef} className="space-y-3 sm:space-y-6 px-2 sm:px-0">
-              <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none text-gray-900 whitespace-nowrap">
-                Hi, I'm <span className="text-[#d97706]">Srikanth</span>
-              </h1>
-            </div>
+            {/* ── Left: Text ── */}
+            <div className="flex flex-col space-y-6 order-2 lg:order-1">
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+                Hi, I'm{" "}
+                <span className="text-[#946E1C]">Srikanth</span>
+              </h2>
 
-            {/* Subtitle */}
-            <div ref={subtitleRef} className="space-y-3 sm:space-y-4 px-2 sm:px-0">
-              <p className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light text-gray-800 leading-tight">
+              <p className="text-2xl sm:text-3xl font-light text-gray-700 leading-snug">
                 UI/UX Designer
               </p>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-full sm:max-w-xl mx-auto lg:mx-0 font-light lg:pr-8">
-                UI/UX Designer passionate about creating fast, scalable, and intuitive digital
-                experiences. My work is inspired by the idea that technology should feel simple and elegant, just like the
-                world’s best-designed products.
+
+              <p className="text-gray-500 text-base sm:text-lg leading-relaxed max-w-lg">
+                UI/UX Designer passionate about creating fast, scalable, and
+                intuitive digital experiences. My work is inspired by the idea
+                that technology should feel simple and elegant, just like the
+                world's best-designed products.
               </p>
-            </div>
 
-            {/* Tech Stack */}
-            <div ref={stackRef} className="space-y-4 sm:space-y-6">
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4">
-                {["Figma", "Photoshop", "Adobe XD", "Framer"].map(
-                  (tech, index) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-2 sm:px-4 sm:py-2 md:px-5 md:py-3 lg:px-6 lg:py-3 bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-full text-gray-700 font-medium text-xs sm:text-sm md:text-base shadow-sm hover:shadow-md transition-all duration-300"
-                    >
-                      {tech}
-                    </span>
-                  )
-                )}
-              </div>
-            </div>
-
-            {/* Action Buttons */}
-            <div
-              ref={buttonsRef}
-              className="hidden flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-stretch sm:items-center pt-2 sm:pt-4 w-full"
-            >
-              <a
-                href="#projects"
-                className="group relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-white bg-black rounded-full transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full cursor-pointer"
-              >
-                <span className="relative z-10">View My Work</span>
-              </a>
-
-              <a
-                href="#contact"
-                className="group inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-base sm:text-lg font-medium text-black bg-white border border-gray-300 rounded-full hover:bg-gray-50 transition-all duration-300 shadow-lg hover:shadow-xl w-full sm:w-auto sm:min-w-[180px] md:min-w-[200px] max-w-full cursor-pointer"
-              >
-                <span>Get in Touch</span>
-              </a>
-            </div>
-          </div>
-
-          {/* Right Side - Visual */}
-          <div className="relative order-1 lg:order-2 flex justify-center items-center py-6 sm:py-0">
-            <div
-              ref={imageRef}
-              className="relative w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl aspect-square"
-            >
-              {/* Main visual container */}
-              <div className="relative w-full h-full flex items-center justify-center">
-                <div className="relative w-full aspect-square flex items-center justify-center">
-                  <div
-                    className="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px] xl:w-[500px] xl:h-[500px]
-    bg-white flex items-center justify-center relative overflow-hidden"
+              {/* Tool tags */}
+              <div className="flex flex-wrap gap-3 pt-1">
+                {tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="px-5 py-2 rounded-full border border-gray-300 text-gray-600 text-sm font-medium hover:border-gray-800 hover:text-gray-900 transition-all duration-200 cursor-default"
                   >
-                    <Image
-                      src="/Srikanth_image.png"
-                      alt="srikanth"
-                      fill
-                      className="object-contain"
-                      priority
-                    />
-                  </div>
-                </div>
+                    {tool}
+                  </span>
+                ))}
+              </div>
 
-                {/* Decorative elements - responsive positioning and sizing */}
-                <div className="absolute top-8 sm:top-12 md:top-16 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 bg-[#d97706] rounded-full opacity-40"></div>
-                <div className="absolute bottom-12 sm:bottom-16 md:bottom-20 left-8 sm:left-12 md:left-16 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-400 rounded-full opacity-40"></div>
-                <div className="absolute top-20 sm:top-24 md:top-32 left-4 sm:left-6 md:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#d97706] rounded-full opacity-30"></div>
-                <div className="absolute bottom-20 sm:bottom-24 md:bottom-32 right-6 sm:right-8 md:right-12 w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-gray-300 rounded-full opacity-40"></div>
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 pt-2">
+                <a
+                  href="#projects"
+                  className="px-8 py-3.5 bg-gray-900 text-white rounded-full text-sm font-semibold hover:bg-gray-700 transition-all duration-300 shadow-md cursor-pointer"
+                >
+                  View My Work
+                </a>
+                <a
+                  href="#contact"
+                  className="px-8 py-3.5 border-2 border-gray-900 text-gray-900 rounded-full text-sm font-semibold hover:bg-gray-900 hover:text-white transition-all duration-300 cursor-pointer"
+                >
+                  Hire Me
+                </a>
               </div>
             </div>
+
+            {/* ── Right: Photo ── */}
+            <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
+              <div className="relative w-[260px] h-[320px] sm:w-[360px] sm:h-[440px] md:w-[420px] md:h-[510px] lg:w-[460px] lg:h-[560px]">
+                <Image
+                  src="/Srikanth_image.png"
+                  alt="Srikanth"
+                  fill
+                  className="object-contain object-bottom"
+                  priority
+                />
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
-    </section>
+
+    </div>
   );
 };
 
 export default Hero;
+

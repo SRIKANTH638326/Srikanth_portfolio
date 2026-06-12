@@ -35,7 +35,7 @@ export async function POST(req: Request) {
                 <h2 style="color: #333;">New Message Received</h2>
                 <p><strong>Name:</strong> ${name}</p>
                 <p><strong>Email:</strong> ${email}</p>
-                <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #d97706;">
+                <div style="margin-top: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #946E1C;">
                   <p><strong>Message:</strong></p>
                   <p>${message}</p>
                 </div>
@@ -65,3 +65,4 @@ export async function POST(req: Request) {
     );
   }
 }
+

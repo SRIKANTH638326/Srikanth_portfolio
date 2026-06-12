@@ -50,7 +50,7 @@ export default async function Image() {
             height: "500px",
             borderRadius: "50%",
             overflow: "hidden",
-            border: "12px solid #d97706",
+            border: "12px solid #946E1C",
             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
           }}
         >
@@ -70,7 +70,7 @@ export default async function Image() {
               style={{
                 width: "100%",
                 height: "100%",
-                background: "#d97706",
+                background: "#946E1C",
                 borderRadius: "50%",
               }}
             />
@@ -99,7 +99,7 @@ export default async function Image() {
           <div
             style={{
               fontSize: "36px",
-              color: "#d97706",
+              color: "#946E1C",
               fontWeight: "600",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
@@ -127,3 +127,4 @@ export default async function Image() {
     }
   );
 }
+
