@@ -28,6 +28,9 @@ import {
   SiExpress,
   SiGit,
   SiFirebase,
+  SiFigma,
+  SiFramer,
+  SiMysql,
 } from "react-icons/si";
 import Image from "next/image";
 
@@ -116,6 +119,79 @@ const GSAPIcon = () => (
   </svg>
 );
 
+// Adobe XD Icon
+const AdobeXDIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="12" fill="#470137" />
+    <text x="32" y="42" fontSize="24" textAnchor="middle" fill="#FF61F6" fontFamily="Arial, sans-serif" fontWeight="bold">Xd</text>
+  </svg>
+);
+
+// Adobe Photoshop Icon
+const PhotoshopIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="12" fill="#001E36" />
+    <text x="32" y="42" fontSize="24" textAnchor="middle" fill="#31A8FF" fontFamily="Arial, sans-serif" fontWeight="bold">Ps</text>
+  </svg>
+);
+
+// Power BI Icon
+const PowerBIIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect x="14" y="32" width="8" height="20" fill="#F2C811" />
+    <rect x="28" y="20" width="8" height="32" fill="#F2C811" />
+    <rect x="42" y="8" width="8" height="44" fill="#F2C811" />
+  </svg>
+);
+
+// Tableau Icon
+const TableauIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="8" fill="#E97B30" />
+    <circle cx="32" cy="14" r="4" fill="#5C85AF" />
+    <circle cx="32" cy="50" r="4" fill="#5C85AF" />
+    <circle cx="14" cy="32" r="4" fill="#F5C04B" />
+    <circle cx="50" cy="32" r="4" fill="#F5C04B" />
+    <circle cx="18" cy="18" r="3" fill="#D36E7B" />
+    <circle cx="46" cy="46" r="3" fill="#D36E7B" />
+    <circle cx="18" cy="46" r="3" fill="#80A157" />
+    <circle cx="46" cy="18" r="3" fill="#80A157" />
+  </svg>
+);
+
+// Excel Icon
+const ExcelIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="12" fill="#217346" />
+    <text x="32" y="42" fontSize="26" textAnchor="middle" fill="white" fontFamily="Arial, sans-serif" fontWeight="bold">X</text>
+  </svg>
+);
+
+// Matplotlib Icon
+const MatplotlibIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="12" fill="#11557C" />
+    <path d="M 16 48 L 16 16 L 48 16" fill="none" stroke="white" strokeWidth="4" />
+    <path d="M 16 48 L 26 32 L 36 38 L 48 24" fill="none" stroke="#FFC107" strokeWidth="4" />
+  </svg>
+);
+
+// Seaborn Icon
+const SeabornIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <rect width="64" height="64" rx="12" fill="#4C72B0" />
+    <text x="32" y="42" fontSize="24" textAnchor="middle" fill="white" fontFamily="Arial, sans-serif" fontWeight="bold">Sb</text>
+  </svg>
+);
+
+// Stitch Icon
+const StitchIcon = () => (
+  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="24" fill="#FFC107" />
+    <path d="M22 32 L32 22 L42 32 L32 42 Z" fill="black" />
+  </svg>
+);
+
 // Floating Background Icons
 const FloatingIcons = () => {
   const iconsRef = useRef<HTMLDivElement[]>([]);
@@ -190,47 +266,26 @@ const FloatingIcons = () => {
 
 const skills = [
   {
-    name: "Next.js",
+    name: "Figma",
     icon: (
-      <div className="text-gray-800">
-        <SiNextdotjs size={40} />
+      <div className="text-purple-500">
+        <SiFigma size={40} />
       </div>
     ),
   },
+  { name: "Adobe XD", icon: <AdobeXDIcon /> },
+  { name: "Adobe Photoshop", icon: <PhotoshopIcon /> },
   {
-    name: "Node.js",
+    name: "Framer",
     icon: (
-      <div className="text-green-600">
-        <FaNodeJs size={40} />
+      <div className="text-black">
+        <SiFramer size={40} />
       </div>
     ),
   },
+  { name: "Stitch", icon: <StitchIcon /> },
   {
-    name: "Express.js",
-    icon: (
-      <div className="text-gray-700">
-        <SiExpress size={40} />
-      </div>
-    ),
-  },
-  {
-    name: "React.js",
-    icon: (
-      <div className="text-cyan-500">
-        <FaReact size={40} />
-      </div>
-    ),
-  },
-  {
-    name: "Tailwind CSS",
-    icon: (
-      <div className="text-sky-500">
-        <SiTailwindcss size={40} />
-      </div>
-    ),
-  },
-  {
-    name: "CSS3",
+    name: "HTML",
     icon: (
       <div className="text-orange-500">
         <SiHtml5 size={40} />
@@ -238,69 +293,10 @@ const skills = [
     ),
   },
   {
-    name: "Netlify",
+    name: "CSS",
     icon: (
-      <div className="text-teal-500">
-        <SiNetlify size={40} />
-      </div>
-    ),
-  },
-  {
-    name: "Vercel",
-    icon: (
-      <div className="text-black">
-        <SiVercel size={40} />
-      </div>
-    ),
-  },
-  {
-    name: "AWS S3",
-    icon: (
-      <div className="text-[#FF9900]">
-        <FaAws size={40} />
-      </div>
-    ),
-  },
-  {
-    name: "MongoDB",
-    icon: (
-      <div className="text-green-500">
-        <SiMongodb size={40} />
-      </div>
-    ),
-  },
-  {
-    name: "Postman",
-    icon: (
-      <div className="text-red-500">
-        <SiPostman size={40} />
-      </div>
-    ),
-  },
-  {
-    name: "Git/GitHub",
-    icon: (
-      <div className="text-orange-600">
-        <SiGit size={40} />
-      </div>
-    ),
-  },
-  { name: "VSCode", icon: <VSCodeIcon /> },
-  {
-    name: "Redux",
-    icon: (
-      <div className="text-purple-600">
-        <SiRedux size={40} />
-      </div>
-    ),
-  },
-  { name: "Acertinity UI", icon: <AcertinityUIIcon /> },
-  { name: "GSAP", icon: <GSAPIcon /> },
-  {
-    name: "Framer Motion",
-    icon: (
-      <div className="text-pink-500">
-        <FaReact size={40} />
+      <div className="text-blue-500">
+        <SiTailwindcss size={40} />
       </div>
     ),
   },
@@ -313,33 +309,75 @@ const skills = [
     ),
   },
   {
-    name: "Firebase",
+    name: "React.js",
     icon: (
-      <div className="text-yellow-500">
-        <SiFirebase size={40} />
+      <div className="text-cyan-500">
+        <FaReact size={40} />
       </div>
     ),
   },
   {
-    name: "TypeScript",
+    name: "Git",
     icon: (
-      <div className="text-blue-600">
-        <SiTypescript size={40} />
+      <div className="text-orange-600">
+        <SiGit size={40} />
       </div>
     ),
   },
-  { name: "MSG91", icon: <MSG91Icon /> },
-  { name: "Shiprocket", icon: <ShiprocketIcon /> },
-  { name: "Render", icon: <RenderIcon /> },
-  { name: "Brevo", icon: <BrevoIcon /> },
   {
-    name: "WhatsApp API",
+    name: "GitHub",
+    icon: (
+      <div className="text-gray-800">
+        <SiGit size={40} />
+      </div>
+    ),
+  },
+  { name: "Power BI", icon: <PowerBIIcon /> },
+  { name: "Tableau", icon: <TableauIcon /> },
+  {
+    name: "MySQL",
+    icon: (
+      <div className="text-blue-500">
+        <SiMysql size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "Python",
+    icon: (
+      <div className="text-blue-400">
+        <FaPython size={40} />
+      </div>
+    ),
+  },
+  { name: "Matplotlib", icon: <MatplotlibIcon /> },
+  { name: "Seaborn", icon: <SeabornIcon /> },
+  {
+    name: "Vercel",
+    icon: (
+      <div className="text-black">
+        <SiVercel size={40} />
+      </div>
+    ),
+  },
+  {
+    name: "MongoDB",
     icon: (
       <div className="text-green-500">
-        <FaWhatsapp size={40} />
+        <SiMongodb size={40} />
       </div>
     ),
   },
+  {
+    name: "Git/GitHub",
+    icon: (
+      <div className="text-orange-600">
+        <SiGit size={40} />
+      </div>
+    ),
+  },
+  { name: "VSCode", icon: <VSCodeIcon /> },
+  { name: "Render", icon: <RenderIcon /> },
 ];
 
 const Skills = () => {
@@ -367,8 +405,6 @@ const Skills = () => {
 
   return (
     <section className="relative py-16 bg-white overflow-hidden">
-      <FloatingIcons />
-
       <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10">
         <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-4">
           My <span className="text-[#d97706]">Technology</span> Expertise

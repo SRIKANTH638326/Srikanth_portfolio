@@ -124,12 +124,6 @@ const Navbar = () => {
               >
                SRIKANTH
               </span>
-              <span
-                className="text-gray-600 
-               text-[11px] sm:text-xs md:text-sm tracking-wide sm:tracking-widest"
-              >
-                UI/UX Designer
-              </span>
             </a>
 
             {/* Desktop Navigation */}
@@ -210,12 +204,6 @@ const Navbar = () => {
                text-xl sm:text-xl md:text-2xl lg:text-2xl font-bold tracking-tight"
             >
               Srikanth
-            </span>
-            <span
-              className="text-gray-600 
-               text-md sm:text-sm md:text-base lg:text-base tracking-wide sm:tracking-widest"
-            >
-              UI/UX Designer
             </span>
           </a>
 

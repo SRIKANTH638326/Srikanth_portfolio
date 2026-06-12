@@ -174,8 +174,40 @@ const Hero = () => {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-[650px] w-full bg-white overflow-hidden flex items-center"
+      className="relative min-h-[650px] w-full bg-white overflow-hidden flex flex-col pt-24"
     >
+      {/* Presentation Banner */}
+      <div className="w-full px-4 sm:px-8 mb-12">
+        <div className="w-full bg-[#EFECE6] relative overflow-hidden flex flex-col items-center justify-center min-h-[300px] md:min-h-[450px] rounded-md shadow-sm border border-gray-200">
+          {/* Inner border */}
+          <div className="absolute inset-4 sm:inset-6 md:inset-8 border-[1px] border-[#8199B1]/60 rounded-sm pointer-events-none"></div>
+
+          {/* Background Text PORTFOLIO */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
+            <h1 
+              className="text-[80px] sm:text-[140px] md:text-[180px] lg:text-[220px] font-serif text-transparent leading-none" 
+              style={{ WebkitTextStroke: '2px rgba(255, 255, 255, 0.9)' }}
+            >
+              PORTFOLIO
+            </h1>
+          </div>
+
+          {/* Foreground Text */}
+          <div className="relative z-10 flex flex-col items-center text-center px-4">
+            <h2 className="text-4xl sm:text-6xl md:text-7xl font-extrabold text-[#1A1A1A] tracking-tight">
+              UI/UX Designer
+            </h2>
+            <p className="mt-4 md:mt-6 text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.4em] text-[#333333] uppercase">
+              Presentation
+            </p>
+
+            {/* Blue Pill */}
+            <div className="mt-10 sm:mt-12 bg-[#1D63A6] text-white text-[10px] sm:text-xs px-6 py-2 md:py-2.5 rounded-full font-medium tracking-wide">
+              www.srikanth.com
+            </div>
+          </div>
+        </div>
+      </div>
       <div
         ref={backgroundRef}
         className="absolute inset-0 pointer-events-none overflow-hidden "
@@ -189,8 +221,8 @@ const Hero = () => {
         </div> */}
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-6 md:px-8 lg:px-8 xl:px-8 box-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center py-12 sm:py-16 md:py-16 lg:py-16">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-6 md:px-8 lg:px-8 xl:px-8 box-border flex-1 flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 xl:gap-20 items-center py-12 sm:py-16 md:py-16 lg:py-16 w-full">
           {/* Left Side - Content */}
           <div className="text-center lg:text-left space-y-6 sm:space-y-8 md:space-y-10 order-2 lg:order-1 mt-12">
             <div ref={textRef} className="space-y-3 sm:space-y-6 px-2 sm:px-0">
@@ -230,7 +262,7 @@ const Hero = () => {
             {/* Action Buttons */}
             <div
               ref={buttonsRef}
-              className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-stretch sm:items-center pt-2 sm:pt-4 w-full"
+              className="hidden flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start items-stretch sm:items-center pt-2 sm:pt-4 w-full"
             >
               <a
                 href="#projects"

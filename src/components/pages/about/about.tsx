@@ -5,8 +5,11 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="relative bg-white py-12 overflow-hidden">
-      <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20 text-center">
+    <section id="about" className="relative bg-white py-16 overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 text-center">
+        
+
+
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}

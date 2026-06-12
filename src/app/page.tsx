@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import Contact from "@/components/contact/contact";
 import About from "@/components/pages/about/about";
 import Education from "@/components/pages/education/education";
+import Certifications from "@/components/pages/certifications/certifications";
 import Experience from "@/components/pages/experience/experience";
 import Hero from "@/components/pages/hero/hero";
 import Projects from "@/components/pages/project/project";
@@ -39,6 +40,7 @@ export default function Page() {
             <section id="about"><About /></section>
             <section id="skills"><Skills /></section>
             <section id="education"><Education /></section>
+            <section id="certifications"><Certifications /></section>
             <section id="projects"><Projects /></section>
             <section id="experience"><Experience /></section>
             <section id="contact"><Contact /></section>
