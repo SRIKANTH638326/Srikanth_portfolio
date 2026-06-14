@@ -387,7 +387,7 @@ const Skills = () => {
   const percentages = ["98%", "95%", "92%", "90%", "88%", "85%"];
 
   return (
-    <section id="skills" className="relative py-20 bg-white overflow-hidden">
+    <section id="skills" className="relative py-20 bg-[#FCFBF9] overflow-hidden">
       <style>{`
         @keyframes scrollLeft {
           0% { transform: translateX(0); }
@@ -408,12 +408,12 @@ const Skills = () => {
         }
       `}</style>
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 z-10 mb-16">
-        <div className="text-center space-y-2">
+      <div className="relative max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16 z-10 mb-16">
+        <div className="text-left space-y-2">
           <p className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-4">
             <span className="text-[#946E1C] mr-2">—</span>My Favorite Tools
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-[#946E1C] italic">
+          <h2 className="text-4xl md:text-5xl font-light text-[#946E1C]">
             Exploring the Tools
           </h2>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">

@@ -1,24 +1,25 @@
-/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import React, { useState } from "react";
-import { Linkedin, Github, Instagram, Twitter } from "lucide-react";
-import { motion } from "framer-motion";
 import { toast } from "sonner";
 
 const Contact = () => {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", company: "" });
+  const [selectedService, setSelectedService] = useState<string>("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const services = [
+    "Mobile App",
+    "Website Design",
+    "Branding",
+    "Webflow development",
+    "App design",
+    "Graphic design",
+    "Wordpress",
+  ];
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    if (name === "name") {
-      const cleanedValue = value.replace(/[^a-zA-Z\s]/g, "");
-      setForm({ ...form, [name]: cleanedValue });
-    } else {
-      setForm({ ...form, [name]: value });
-    }
+    setForm({ ...form, [name]: value });
   };
 
   const validateEmail = (email: string) => {
@@ -33,11 +34,22 @@ const Contact = () => {
       return;
     }
 
+    if (!selectedService) {
+      toast.error("Please select what's in your mind.");
+      return;
+    }
+
+    const messageContent = `Company: ${form.company}\nInterested in: ${selectedService}`;
+
     const sendEmail = async () => {
       const resp = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: messageContent,
+        }),
       });
 
       if (!resp.ok) {
@@ -45,7 +57,8 @@ const Contact = () => {
         throw new Error(err.error || "Failed to send message.");
       }
 
-      setForm({ name: "", email: "", message: "" });
+      setForm({ name: "", email: "", company: "" });
+      setSelectedService("");
       return "Message sent successfully!";
     };
 
@@ -57,142 +70,130 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="w-full bg-white py-20 lg:py-32">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
-        {/* Left Column */}
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex flex-col justify-center"
-        >
-          <h2 className="text-5xl lg:text-6xl font-normal text-gray-900 mb-12 tracking-tight">
-            Get in touch
+    <section id="contact" className="w-full bg-[#FCFBF9] py-20 lg:py-32 font-sans overflow-hidden">
+      <div className="max-w-[800px] mx-auto px-6 sm:px-8 flex flex-col items-center">
+        
+        {/* Headings */}
+        <div className="text-center mb-4 relative">
+          <h2 className="text-4xl sm:text-5xl md:text-[56px] font-extrabold tracking-tight leading-[1.1] text-black">
+            <span className="text-gray-400">Say Hi!</span> and tell me about<br />your idea
           </h2>
-
-          <div className="space-y-8">
-            <div>
-              <p className="text-gray-500 text-sm mb-1">Email:</p>
-              <p className="text-gray-900 text-base font-medium">srikanthc061@gmail.com</p>
-            </div>
-            
-            <div>
-              <p className="text-gray-500 text-sm mb-1">Phone:</p>
-              <p className="text-gray-900 text-base font-medium">+91 8110813471</p>
-            </div>
-            
-            <div>
-              <p className="text-gray-500 text-sm mb-1">Address:</p>
-              <p className="text-gray-900 text-base font-medium leading-relaxed max-w-sm">
-                Bengaluru, India
-              </p>
-            </div>
-            
-            <div>
-              <p className="text-gray-500 text-sm mb-3">Follow us</p>
-              <div className="flex space-x-3">
-                {[
-                  { icon: <Instagram size={18} fill="currentColor" />, href: "#" },
-                  { icon: <Github size={18} fill="currentColor" />, href: "https://github.com/SRIKANTH638326" },
-                  { icon: <Linkedin size={18} fill="currentColor" />, href: "https://www.linkedin.com/in/srikanth-c-270b00347/" },
-                  { icon: <Twitter size={18} fill="currentColor" />, href: "#" },
-                ].map((social, idx) => (
-                  <a
-                    key={idx}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-900 hover:bg-gray-700 text-white p-2.5 rounded-full transition flex items-center justify-center cursor-pointer"
-                  >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
-            </div>
+          {/* Hand-drawn Arrow under Say Hi! */}
+          <div className="absolute left-[15%] sm:left-[20%] -bottom-4 hidden sm:block">
+            <svg width="120" height="24" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12 Q 50 14, 110 12 M 95 5 L 115 12 L 95 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </div>
-        </motion.div>
+        </div>
+        
+        <p className="text-gray-600 text-lg mb-16">
+          Have a nice works? reach out and let's chat.
+        </p>
 
-        {/* Right Column - Form */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="flex flex-col justify-center"
-        >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {/* Name */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Your full name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-5 py-4 bg-[#F5F5F5] border-none rounded-2xl text-gray-900 focus:ring-2 focus:ring-black outline-none placeholder-gray-400 text-sm"
-                />
-              </div>
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="w-full relative mt-8">
+          
+          {/* Dot Grid Decoration */}
+          <div className="absolute -right-8 -top-8 hidden md:grid grid-cols-4 gap-2 opacity-60">
+            {Array.from({ length: 36 }).map((_, i) => (
+              <div key={i} className="w-[3px] h-[3px] bg-black rounded-full" />
+            ))}
+          </div>
 
-              {/* Email */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
-                >
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Your email address"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-5 py-4 bg-[#F5F5F5] border-none rounded-2xl text-gray-900 focus:ring-2 focus:ring-black outline-none placeholder-gray-400 text-sm"
-                />
-              </div>
-            </div>
-
-            {/* Message */}
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                Message
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 mb-12">
+            {/* Name */}
+            <div className="flex flex-col">
+              <label htmlFor="name" className="text-sm font-bold text-black mb-4">
+                Name:*
               </label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Write something..."
-                value={form.message}
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Hello..."
+                value={form.name}
                 onChange={handleChange}
                 required
-                rows={6}
-                className="w-full px-5 py-5 bg-[#F5F5F5] border-none rounded-3xl text-gray-900 focus:ring-2 focus:ring-black outline-none placeholder-gray-400 resize-none text-sm"
+                className="w-full pb-3 bg-transparent border-b border-gray-300 text-gray-900 focus:border-black outline-none placeholder-gray-400 text-sm transition-colors"
               />
             </div>
 
-            {/* Submit Button */}
+            {/* Email */}
+            <div className="flex flex-col">
+              <label htmlFor="email" className="text-sm font-bold text-black mb-4">
+                Email:*
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Where can i reply"
+                value={form.email}
+                onChange={handleChange}
+                required
+                className="w-full pb-3 bg-transparent border-b border-gray-300 text-gray-900 focus:border-black outline-none placeholder-gray-400 text-sm transition-colors"
+              />
+            </div>
+          </div>
+
+          {/* Company */}
+          <div className="flex flex-col mb-16">
+            <label htmlFor="company" className="text-sm font-bold text-black mb-4">
+              Company name
+            </label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              placeholder="Your company or website?"
+              value={form.company}
+              onChange={handleChange}
+              className="w-full pb-3 bg-transparent border-b border-gray-300 text-gray-900 focus:border-black outline-none placeholder-gray-400 text-sm transition-colors"
+            />
+          </div>
+
+          {/* Services / What's in your mind */}
+          <div className="mb-20">
+            <p className="text-sm font-bold text-black mb-6">What's in your mind?*</p>
+            <div className="flex flex-wrap gap-4">
+              {services.map((service) => (
+                <button
+                  key={service}
+                  type="button"
+                  onClick={() => setSelectedService(service)}
+                  className={`px-6 py-3 rounded-full text-sm font-medium border transition-colors cursor-pointer ${
+                    selectedService === service
+                      ? "bg-black text-white border-black"
+                      : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
+                  }`}
+                >
+                  {service}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Submit Section */}
+          <div className="flex flex-col items-center sm:items-end relative">
+            {/* Squiggly Arrow */}
+            <div className="absolute -left-4 sm:right-32 sm:left-auto -top-8 sm:-top-10">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform -rotate-12 scale-110">
+                <path d="M30 5 L20 15 L28 20 L10 35 M10 35 L12 25 M10 35 L22 35" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
+
             <button
               type="submit"
-              className="w-full bg-[#1A1A1A] text-white py-4 rounded-2xl font-medium hover:bg-black transition cursor-pointer text-sm"
+              className="bg-black text-white px-10 py-4 rounded-full font-medium hover:bg-gray-800 transition cursor-pointer text-sm shadow-md"
             >
-              Send Message
+              Send Me
             </button>
-          </form>
-        </motion.div>
+            <p className="text-xs text-gray-400 mt-4 text-center sm:text-right w-full font-medium">
+              I'll must get back to you within 24 hours
+            </p>
+          </div>
+          
+        </form>
       </div>
     </section>
   );

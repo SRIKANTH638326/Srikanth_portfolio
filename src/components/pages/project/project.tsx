@@ -1,9 +1,7 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
@@ -135,136 +133,95 @@ const projects = [
 ];
 
 const Projects = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState("All");
-
-  const colors = [
-    { bg: "bg-[#EBF38B]", border: "border-[#EBF38B]" }, // Pale yellow
-    { bg: "bg-[#9AF09F]", border: "border-[#9AF09F]" }, // Pale green
-    { bg: "bg-[#F3CE9E]", border: "border-[#F3CE9E]" }, // Orange
-    { bg: "bg-[#BDB6DF]", border: "border-[#BDB6DF]" }, // Purple
-    { bg: "bg-[#F4A5AE]", border: "border-[#F4A5AE]" }, // Pink
-  ];
-
-  const scrollLeft = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
-    }
-  };
-
-  const scrollRight = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
-    }
-  };
 
   const filteredProjects = projects.filter(
     (p) => activeTab === "All" || p.category === activeTab
   );
 
   return (
-    <section
-      id="projects"
-      className="relative bg-white text-gray-900 py-20 overflow-hidden"
-    >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        {/* Section Title & Navigation */}
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="text-4xl sm:text-5xl lg:text-[64px] font-extrabold leading-[1.05] uppercase tracking-tighter"
-          >
-            FEATURED <span className="text-[#946E1C]">PROJECTS</span>
-          </motion.h2>
-
-          {/* Navigation Buttons */}
-          <div className="flex gap-4 pb-2">
-            <button
-              onClick={scrollLeft}
-              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
-              aria-label="Previous project"
-            >
-              <ChevronLeft size={24} className="text-gray-600" />
-            </button>
-            <button
-              onClick={scrollRight}
-              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
-              aria-label="Next project"
-            >
-              <ChevronRight size={24} className="text-gray-600" />
-            </button>
-          </div>
+    <section id="projects" className="relative bg-[#FCFBF9] text-gray-900 py-20 lg:py-32 overflow-hidden font-sans">
+      <div className="max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16">
+        
+        {/* Header Section */}
+        <div className="relative mb-20 lg:mb-32 flex flex-col items-center justify-center">
+          {/* Faded background text */}
+          <h1 className="absolute text-[80px] sm:text-[140px] lg:text-[180px] font-bold text-gray-900 opacity-[0.03] tracking-wider uppercase select-none pointer-events-none whitespace-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            PORTFOLIO
+          </h1>
+          <h2 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight z-10 text-black">
+            /SELECTED WORK
+          </h2>
         </div>
 
-        {/* Tabs */}
-        <div className="inline-flex flex-wrap rounded-full border border-gray-200 bg-gray-50/50 p-1 mb-10">
-          {["All", "App", "Web", "Graphic"].map((tab, index) => (
-            <button
-              key={tab}
-              onClick={() => {
-                setActiveTab(tab);
-                if (scrollRef.current) {
-                  scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
-                }
-              }}
-              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all cursor-pointer ${
-                activeTab === tab
-                  ? "bg-[#946E1C] text-white shadow-md"
-                  : "text-gray-500 hover:text-[#946E1C]"
-              }`}
+        {/* Navigation / Tabs */}
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-8">
+          <div className="flex gap-6 sm:gap-8 text-sm sm:text-base">
+            {["All", "App", "Web", "Graphic"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`transition-colors ${
+                  activeTab === tab
+                    ? "text-black font-semibold"
+                    : "text-gray-500 hover:text-black font-medium"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          <a href="#" className="px-6 py-2.5 rounded-full border border-gray-200 text-sm font-medium hover:border-gray-400 hover:bg-gray-50 transition-colors flex items-center gap-2 text-black cursor-pointer">
+            View All Work <span className="text-lg leading-none font-light">↗</span>
+          </a>
+        </div>
+
+        {/* Project Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {filteredProjects.map((project) => (
+            <div 
+              key={project.title} 
+              className="flex flex-col group cursor-pointer" 
+              onClick={() => window.open(project.link, "_blank")}
             >
-              0{index + 1} {tab}
-            </button>
+              
+              {/* Image Container */}
+              <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-4 bg-[#F8F8F8] border border-gray-100">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
+                
+                {/* Hover Arrow Button */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 backdrop-blur-[2px]">
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                    <span className="text-2xl text-black font-light leading-none">↗</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Text Content */}
+              <h3 className="text-base sm:text-lg font-semibold text-black mb-3 leading-snug">
+                {project.title.split('–')[0].trim()}
+              </h3>
+              
+              {/* Tags */}
+              <div className="flex gap-2">
+                <span className="px-3 py-1.5 border border-gray-200 rounded-full text-[11px] font-medium text-gray-700 bg-transparent">
+                  {project.type}
+                </span>
+                <span className="px-3 py-1.5 border border-gray-200 rounded-full text-[11px] font-medium text-gray-700 bg-transparent">
+                  {project.tech[0]}
+                </span>
+              </div>
+
+            </div>
           ))}
         </div>
 
-        {/* Horizontal Scroll Layout */}
-        <div
-          ref={scrollRef}
-          className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-        >
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((project, index) => {
-              const color = colors[index % colors.length];
-              return (
-                <motion.div
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  key={project.title}
-                  onClick={() => window.open(project.link, "_blank")}
-                  className={`min-w-[85vw] sm:min-w-[550px] lg:min-w-[700px] h-[400px] sm:h-[380px] snap-center rounded-[32px] flex flex-col sm:flex-row overflow-hidden cursor-pointer group flex-shrink-0 shadow-xl border-8 ${color.border}`}
-                >
-                  {/* Left Content */}
-                  <div className={`w-full sm:w-1/2 h-[55%] sm:h-full p-8 sm:p-10 flex flex-col justify-end ${color.bg} text-[#1A1A1A]`}>
-                    <div className="mb-2">
-                      <div className="text-xs font-semibold tracking-widest uppercase opacity-70 font-mono mb-4">
-                        0{index + 1} {project.type}
-                      </div>
-                      <h3 className="text-3xl sm:text-4xl font-black uppercase leading-[1.05] tracking-tight">
-                        {project.title.split("–")[0].trim()}
-                      </h3>
-                    </div>
-                  </div>
-                  {/* Right Image */}
-                  <div className="w-full sm:w-1/2 h-[45%] sm:h-full relative bg-gray-100">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </div>
       </div>
     </section>
   );

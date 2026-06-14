@@ -1,85 +1,98 @@
 "use client";
 
 import React from "react";
-import { PenTool, LineChart, ShieldCheck } from "lucide-react";
-import { motion } from "framer-motion";
 
 const Certifications = () => {
-  const certificationsData = [
+  const certs = [
     {
       title: "UI/UX Designing & Development",
       institution: "FITA Academy",
-      date: "January 2025",
-      icon: PenTool,
+      duration: "6 months of dedicated study",
+      level: "Advanced",
+      bg: "bg-[#D4EAC8]",
+      image: "/cert_uiux.png",
     },
     {
       title: "Data Analysis Certification",
       institution: "Udemy",
-      date: "March 2024 & November 2025",
-      icon: LineChart,
+      duration: "3 months of dedicated study",
+      level: "Intermediate",
+      bg: "bg-[#F5C5A3]",
+      image: "/cert_data.png",
     },
     {
-      title: "Cyber Security Orientation Program",
-      institution: "3-Hour Certification Program",
-      date: "Completed",
-      icon: ShieldCheck,
+      title: "Cyber Security Orientation",
+      institution: "Online Program",
+      duration: "1 month of dedicated study",
+      level: "Beginner",
+      bg: "bg-[#BDD4EF]",
+      image: "/cert_cyber.png",
     },
   ];
 
   return (
-    <section id="certifications" className="bg-[#EFECE6] py-16 lg:py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 sm:px-8">
-        
-        {/* Section Heading */}
-        <motion.div 
-          className="text-center max-w-2xl mx-auto mb-16 lg:mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p className="text-sm font-bold tracking-widest text-[#946E1C] uppercase mb-4">
-            Continuous Learning
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light text-gray-900 leading-tight">
-            My <span className="font-semibold">Certifications</span>
-          </h2>
-        </motion.div>
+    <section id="certifications" className="bg-[#FCFBF9] py-20 lg:py-32 font-sans overflow-hidden">
+      <div className="max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16">
 
-        {/* Certifications Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {certificationsData.map((cert, index) => {
-            const Icon = cert.icon;
-            return (
-              <motion.div 
-                key={index} 
-                className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col items-start group"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true }}
-              >
-                {/* Icon Box */}
-                <div className="w-16 h-16 rounded-2xl bg-[#EFECE6] flex items-center justify-center mb-8 group-hover:bg-[#946E1C] transition-colors duration-300">
-                  <Icon size={28} className="text-gray-800 group-hover:text-white transition-colors duration-300" />
+        {/* Header Row */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-16 lg:mb-20">
+          {/* Left: small text + description */}
+          <div className="flex flex-col gap-5 max-w-xs">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center">
+                <span className="text-white text-sm font-bold">✦</span>
+              </div>
+            </div>
+            <p className="text-gray-500 text-sm leading-relaxed font-medium">
+              I continuously upskill through certifications, exploring design, development, data analysis, and cybersecurity.
+            </p>
+          </div>
+
+          {/* Right: Big title */}
+          <div className="flex-1 lg:text-right flex items-end">
+            <h2 className="text-4xl sm:text-5xl lg:text-[64px] font-bold tracking-tight text-black leading-[1.1] w-full">
+              Directions of Learning
+            </h2>
+          </div>
+        </div>
+
+        {/* Cards Row */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {certs.map((cert, index) => (
+            <div
+              key={index}
+              className={`relative rounded-3xl overflow-hidden group cursor-pointer flex flex-col min-h-[320px] ${cert.bg}`}
+            >
+              {/* Top: Badge + Arrow */}
+              <div className="flex justify-between items-start p-5 pb-0">
+                <span className="text-xs font-semibold bg-white/70 text-gray-700 px-3 py-1 rounded-full">
+                  {cert.level}
+                </span>
+                <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                  <span className="text-black text-base font-light leading-none">↗</span>
                 </div>
-                
-                {/* Content */}
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight mb-4 group-hover:text-[#946E1C] transition-colors">
+              </div>
+
+              {/* Middle: Image */}
+              <div className="flex-1 px-5 pt-4">
+                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-md">
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+              </div>
+
+              {/* Bottom: Text */}
+              <div className="p-5 pt-4">
+                <h3 className="text-lg font-bold text-gray-900 leading-snug mb-1">
                   {cert.title}
                 </h3>
-                
-                <div className="mt-auto pt-4 w-full border-t border-gray-100 flex flex-col gap-1">
-                  <p className="text-sm font-medium text-gray-500 uppercase tracking-wider">
-                    {cert.institution}
-                  </p>
-                  <p className="text-sm text-gray-400">
-                    {cert.date}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+                <p className="text-sm text-gray-600 font-medium">{cert.duration}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

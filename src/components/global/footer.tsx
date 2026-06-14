@@ -1,92 +1,79 @@
 'use client';
 
 import React from 'react';
-import { Linkedin, Github, Twitter, Instagram } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Apple, Play } from 'lucide-react';
 
 const Footer = () => {
   const navLinks = [
-    { label: 'About', href: '#about' },
+    { label: 'Homepage', href: '#hero' },
+    { label: 'About Us', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Contact', href: '#contact' },
-  ];
-
-  const categories = [
-    'UI/UX Design',
-    'Wireframing & Prototyping',
-    'Design Systems',
-  ];
-
-  const socialLinks = [
-    { icon: <Linkedin size={18} />, href: '#' },
-    { icon: <Github size={18} />, href: '#' },
-    { icon: <Twitter size={18} />, href: '#' },
-    { icon: <Instagram size={18} />, href: '#' },
+    { label: 'Contact Us', href: '#contact' },
   ];
 
   return (
-    <footer className="bg-[#111111] text-white w-full">
-
-      {/* Top section: Logo + categories */}
-      <div className="max-w-5xl mx-auto px-6 pt-14 pb-8 text-center">
-        {/* Logo */}
-        <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="w-8 h-8 bg-white rounded-sm flex items-center justify-center">
-            <div className="w-4 h-4 bg-[#111111] rounded-sm" />
+    <footer className="bg-[#FCFBF9] w-full px-4 sm:px-6 lg:px-8 pb-8 pt-10 font-sans">
+      <div className="max-w-[1200px] mx-auto bg-[#050505] rounded-[32px] sm:rounded-[40px] px-8 sm:px-12 lg:px-16 pt-16 pb-8 text-white relative overflow-hidden">
+        
+        {/* Top Section */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-10 mb-12">
+          
+          {/* Left: Logo & Text */}
+          <div className="max-w-md">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+                <span className="text-white font-bold text-lg leading-none">S</span>
+              </div>
+              <span className="text-white text-xl font-bold tracking-tight">
+                Srikanth
+              </span>
+            </div>
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
+              Our mission is to empower lazy people design, build, and kickstart their startups with the absolute least amount of effort.
+            </p>
           </div>
-          <span className="text-white text-2xl font-bold tracking-widest uppercase">
-            Srikanth
-          </span>
+
+
         </div>
 
+        {/* Navigation Links */}
+        <div className="flex flex-wrap gap-x-8 gap-y-4 mb-12">
+          {navLinks.map((item) => (
+            <a key={item.label} href={item.href} className="text-sm font-semibold text-gray-200 hover:text-white transition-colors">
+              {item.label}
+            </a>
+          ))}
+        </div>
+
+        {/* Divider */}
+        <div className="w-full h-px bg-gray-800 mb-8" />
+
+        {/* Bottom Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <p className="text-xs sm:text-sm text-gray-400 font-medium">
+            Copyright {new Date().getFullYear()}© Srikanth, All Rights Reserved.
+          </p>
+
+          <div className="flex items-center gap-5 text-gray-300">
+            <a href="#" className="hover:text-white transition-colors">
+              <Facebook size={20} fill="currentColor" strokeWidth={0} />
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              <Instagram size={20} />
+            </a>
+            <a href="#" className="hover:text-white transition-colors">
+              <Linkedin size={20} fill="currentColor" strokeWidth={0} />
+            </a>
+          </div>
+        </div>
 
       </div>
-
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="h-px bg-white/10" />
-      </div>
-
-      {/* Middle: Nav links */}
-      <div className="max-w-5xl mx-auto px-6 py-10 flex flex-wrap items-center justify-center gap-8 sm:gap-12">
-        {navLinks.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            className="text-gray-300 text-sm sm:text-base font-medium hover:text-white transition-colors duration-200 cursor-pointer"
-          >
-            {link.label}
-          </a>
-        ))}
-      </div>
-
-      {/* Social Icons */}
-      <div className="flex items-center justify-center gap-4 pb-10">
-        {socialLinks.map((social, i) => (
-          <a
-            key={i}
-            href={social.href}
-            className="w-12 h-12 bg-[#1E1E1E] rounded-xl flex items-center justify-center text-gray-300 hover:bg-[#946E1C] hover:text-white transition-all duration-300 cursor-pointer"
-          >
-            {social.icon}
-          </a>
-        ))}
-      </div>
-
-      {/* Divider */}
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="h-px bg-white/10" />
-      </div>
-
-      {/* Bottom: legal + copyright */}
-      <div className="max-w-5xl mx-auto px-6 py-6 flex flex-col items-center gap-3">
-
-        <p className="text-xs text-gray-500">
-          © {new Date().getFullYear()} Srikanth C. All Rights Reserved.
-        </p>
-      </div>
-
     </footer>
   );
 };

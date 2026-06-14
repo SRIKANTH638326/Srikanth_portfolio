@@ -106,7 +106,7 @@ const Navbar = () => {
     <>
       <header
         ref={navRef}
-        className="fixed w-full z-50 bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-200"
+        className="fixed w-full z-50 bg-[#FCFBF9]/95 backdrop-blur-xl shadow-lg border-b border-gray-200"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center py-3">
@@ -186,7 +186,7 @@ const Navbar = () => {
       {/* Mobile Menu Panel */}
       <div
         ref={mobileMenuRef}
-        className={`fixed top-0 right-0 w-80 max-w-sm h-full bg-white/95 backdrop-blur-xl shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed top-0 right-0 w-80 max-w-sm h-full bg-[#FCFBF9]/95 backdrop-blur-xl shadow-2xl z-50 flex flex-col transition-transform duration-300 ease-in-out ${menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
         {/* Mobile Menu Header */}
