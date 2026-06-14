@@ -87,7 +87,7 @@ const Contact = () => {
         </div>
 
         <p className="text-gray-600 text-lg mb-16">
-          Have a nice works? reach out and let's chat.
+          Have a nice works? reach out and let&apos;s chat.
         </p>
 
         {/* Form */}
@@ -154,7 +154,7 @@ const Contact = () => {
 
           {/* Services / What's in your mind */}
           <div className="mb-20">
-            <p className="text-sm font-bold text-black mb-6">What's in your mind?*</p>
+            <p className="text-sm font-bold text-black mb-6">What&apos;s in your mind?*</p>
             <div className="flex flex-wrap gap-4">
               {services.map((service) => (
                 <button
@@ -188,7 +188,7 @@ const Contact = () => {
               Send Me
             </button>
             <p className="text-xs text-gray-400 mt-4 text-center sm:text-right w-full font-medium">
-              I'll must get back to you within 24 hours
+              I&apos;ll must get back to you within 24 hours
             </p>
           </div>
 

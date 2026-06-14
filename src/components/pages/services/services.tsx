@@ -40,7 +40,7 @@ const Services = () => {
               <span className="w-10 h-[2px] bg-black"></span> MY SERVICES ?
             </h3>
             <h2 className="text-5xl sm:text-6xl md:text-[5.5rem] font-extrabold text-black leading-[1.05] tracking-tight">
-              WHAT I'M <br/> OFFERING
+              WHAT I&apos;M <br/> OFFERING
             </h2>
           </div>
           <div className="max-w-[400px] text-sm text-gray-600 leading-relaxed font-medium mb-2 lg:mb-4">

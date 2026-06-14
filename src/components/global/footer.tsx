@@ -1,7 +1,6 @@
 'use client';
 
-import React from 'react';
-import { Facebook, Twitter, Instagram, Linkedin, Apple, Play } from 'lucide-react';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   const navLinks = [

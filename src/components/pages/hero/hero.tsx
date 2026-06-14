@@ -54,7 +54,7 @@ const Hero = () => {
             <div className="text-3xl">👋</div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-black tracking-tight leading-none">
               Hello! <br className="hidden md:block lg:hidden" />
-              <span className="font-extrabold whitespace-nowrap">I'm Srikanth</span>
+              <span className="font-extrabold whitespace-nowrap">I&apos;m Srikanth</span>
             </h1>
             
             <div className="flex items-center gap-4 w-full">
@@ -66,7 +66,7 @@ const Hero = () => {
             </div>
 
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-md pt-4">
-              Hello! I'm Srikanth. I'm a <span className="font-bold text-black">UX designer, design thinker, product designer</span>, experience strategist, generative artist & human-loving introvert
+              Hello! I&apos;m Srikanth. I&apos;m a <span className="font-bold text-black">UX designer, design thinker, product designer</span>, experience strategist, generative artist & human-loving introvert
             </p>
 
             <div className="flex flex-col gap-3 pt-4">
@@ -86,7 +86,7 @@ const Hero = () => {
 
             <div className="flex items-center gap-8 pt-8">
               <button className="bg-[#111] hover:bg-black text-white px-8 py-3.5 rounded-[2rem] text-sm font-medium transition-colors">
-                Let's Talk
+                Let&apos;s Talk
               </button>
               <button className="text-black font-medium text-sm flex items-center gap-2 border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-colors">
                 Download Cv <span>↓</span>

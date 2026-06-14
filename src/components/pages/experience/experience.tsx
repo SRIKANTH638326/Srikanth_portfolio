@@ -43,7 +43,7 @@ const Experience = () => {
           
           <div className="flex flex-col max-w-sm gap-6 md:mt-2">
             <p className="text-gray-500 text-sm leading-relaxed font-medium">
-              Over the past 1.3+ years, I've had the opportunity to work on a wide range of design projects, collaborating with diverse teams and clients to bring creative visions to life.
+              Over the past 1.3+ years, I&apos;ve had the opportunity to work on a wide range of design projects, collaborating with diverse teams and clients to bring creative visions to life.
             </p>
             <a href="#contact" className="text-black font-semibold text-sm border-b border-black pb-0.5 self-start hover:text-gray-600 hover:border-gray-600 transition-colors">
               Book A Call ↗
