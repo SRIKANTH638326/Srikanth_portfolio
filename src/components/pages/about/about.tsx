@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section id="about" className="relative bg-[#EFECE6] py-24 lg:py-32 overflow-hidden">
+    <section id="about" className="relative bg-[#EFECE6] py-16 lg:py-20 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-          
+
           {/* Left Column: Heading */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -32,12 +32,12 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="flex flex-col pt-2 lg:pt-12"
+            className="flex flex-col"
           >
             <p className="text-lg text-gray-600 leading-relaxed mb-6">
               I’m a <span className="font-semibold text-gray-900">UI/UX Designer</span> with 1.3+ years of experience designing responsive web and mobile applications. I am creative, detail-oriented, and passionate about creating intuitive, user-centered digital experiences that drive business growth and customer satisfaction.
             </p>
-            
+
             <p className="text-lg text-gray-600 leading-relaxed mb-10">
               My core skills span across user research, wireframing, prototyping, design systems, and usability testing. Furthermore, I actively leverage AI-assisted design workflows to accelerate UX research, explore new design possibilities, and enhance overall productivity.
             </p>

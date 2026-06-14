@@ -55,7 +55,7 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
             {/* ── Left: Text ── */}
-            <div className="flex flex-col space-y-6 order-2 lg:order-1">
+            <div className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-6 order-2 lg:order-1">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
                 Hi, I'm{" "}
                 <span className="text-[#946E1C]">Srikanth</span>
@@ -73,7 +73,7 @@ const Hero = () => {
               </p>
 
               {/* Tool tags */}
-              <div className="flex flex-wrap gap-3 pt-1">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-1">
                 {tools.map((tool) => (
                   <span
                     key={tool}
@@ -84,25 +84,11 @@ const Hero = () => {
                 ))}
               </div>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 pt-2">
-                <a
-                  href="#projects"
-                  className="px-8 py-3.5 bg-gray-900 text-white rounded-full text-sm font-semibold hover:bg-gray-700 transition-all duration-300 shadow-md cursor-pointer"
-                >
-                  View My Work
-                </a>
-                <a
-                  href="#contact"
-                  className="px-8 py-3.5 border-2 border-gray-900 text-gray-900 rounded-full text-sm font-semibold hover:bg-gray-900 hover:text-white transition-all duration-300 cursor-pointer"
-                >
-                  Hire Me
-                </a>
-              </div>
+
             </div>
 
             {/* ── Right: Photo ── */}
-            <div className="relative flex justify-center lg:justify-end order-1 lg:order-2">
+            <div className="relative flex justify-center lg:justify-center order-1 lg:order-2">
               <div className="relative w-[260px] h-[320px] sm:w-[360px] sm:h-[440px] md:w-[420px] md:h-[510px] lg:w-[460px] lg:h-[560px]">
                 <Image
                   src="/Srikanth_image.png"

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const projects = [
   {
@@ -12,10 +12,8 @@ const projects = [
       "A comprehensive electronics marketplace with multi-vendor support. Features a React admin dashboard and a Flutter QC mobile app for partners. Engineered with automated PDF invoice generation and receipt management for both buying and selling sides, AWS S3 for secure KYC/QC storage, and real-time Firebase tracking with automated data synchronization.",
     image: "/project/bechdu.png",
     type: "UI/UX Design",
-    tech: [
-      "Figma",
-      "Adobe photoshop",
-    ],
+    category: "App",
+    tech: ["Figma", "Adobe photoshop"],
     link: "https://bechdu.in/",
   },
   {
@@ -24,11 +22,8 @@ const projects = [
       "Platform to sell electronics featuring a React admin dashboard and a Flutter QC mobile app for partners. Manages end-to-end lifecycles with smart routing, dynamic rewards, and passwordless MSG91 OTP authentication. Engineered with AWS S3 for secure KYC document storage, automated data synchronization, and on-the-fly PDF invoice generation.",
     image: "/project/sellsmart.png",
     type: "UI/UX Design",
-    tech: [
-      "Figma",
-      "Adobe photoshop",
-      "Adobe Xd",
-    ],
+    category: "App",
+    tech: ["Figma", "Adobe photoshop", "Adobe Xd"],
     link: "https://sellsmart.co.in/",
   },
   {
@@ -37,6 +32,7 @@ const projects = [
       "Architected a robust REST API backend managing complex dual-sided marketplace operations. Engineered end-to-end order lifecycles with dynamic state transitions, real-time technician tracking, and Role-Based Access Control. Features a specialized Partner Management module with OTP-authenticated QC logins, system-wide 'Partner ID' tracking, and secure document pipelines for automated PDF processing.",
     image: "/project/getfixed.png",
     type: "Full Stack",
+    category: "Web",
     tech: [
       "Next.js",
       "Node.js",
@@ -56,6 +52,7 @@ const projects = [
       "Architected a scalable headless CMS and RESTful API backend for a dynamic EdTech platform. Designed optimized Mongoose schemas managing deeply nested arrays (Courses, Blogs). Engineered a robust concurrent multi-file upload system using Multer to parse complex multi-part form data (images, PDFs) safely into AWS S3. Built secure JWT routing workflows and integrated the Brevo API for transactional notifications.",
     image: "/project/codesharks.png",
     type: "Backend / API",
+    category: "Web",
     tech: [
       "Node.js",
       "Express.js",
@@ -77,6 +74,7 @@ const projects = [
       "Official website showcasing the diverse MGBW portfolio. Engineered a highly optimized, dynamic hero video builder serving device-specific assets via responsive media architecture. Solved strict Safari/iOS autoplay restrictions using resilient fallback strategies, event-driven silent retries, and automated listener cleanup pipelines for blazing-fast performance.",
     image: "/project/mgbw.png",
     type: "Frontend",
+    category: "Graphic",
     tech: [
       "Next.js",
       "React",
@@ -94,6 +92,7 @@ const projects = [
       "A full-stack distributed ecosystem for automotive performance parts and custom tuning. Engineered a multi-vendor order-splitting engine with ACID-compliant transactions and Year-Make-Model fitment filtering. Features specialized portals for enthusiasts, vendors, and installers, integrated with Shiprocket logistics, Razorpay, and automated PDF invoicing via Puppeteer.",
     image: "/project/ard.png",
     type: "Full Stack / Marketplace",
+    category: "Web",
     tech: [
       "Node.js",
       "TypeScript",
@@ -114,6 +113,7 @@ const projects = [
       "A comprehensive event marketplace managing workflows for users, vendors, and admins. Features a sophisticated backend with dynamic pricing logic, multi-level taxation, and secure Razorpay checkout integration with webhooks. Engineered an automated fulfillment pipeline utilizing Puppeteer and PDFKit for dynamic PDF ticket generation, alongside background Node Cron jobs and Brevo API email delivery.",
     image: "/project/socialnotch.png",
     type: "Full Stack",
+    category: "Web",
     tech: [
       "Next.js",
       "Node.js",
@@ -135,142 +135,136 @@ const projects = [
 ];
 
 const Projects = () => {
-  const [showAll, setShowAll] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const scrollRef = React.useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeTab, setActiveTab] = useState("All");
 
   const colors = [
-    "bg-[#F3CE9E]", // Pastel Orange
-    "bg-[#B4D2A6]", // Pastel Green
-    "bg-[#BDB6DF]", // Pastel Purple
-    "bg-[#F4A5AE]", // Pastel Pink
-    "bg-[#98C1D9]", // Pastel Blue
+    { bg: "bg-[#EBF38B]", border: "border-[#EBF38B]" }, // Pale yellow
+    { bg: "bg-[#9AF09F]", border: "border-[#9AF09F]" }, // Pale green
+    { bg: "bg-[#F3CE9E]", border: "border-[#F3CE9E]" }, // Orange
+    { bg: "bg-[#BDB6DF]", border: "border-[#BDB6DF]" }, // Purple
+    { bg: "bg-[#F4A5AE]", border: "border-[#F4A5AE]" }, // Pink
   ];
 
-  const visibleProjects = showAll ? projects : projects.slice(0, 6);
-
-  const handleScroll = () => {
+  const scrollLeft = () => {
     if (scrollRef.current) {
-      const scrollLeft = scrollRef.current.scrollLeft;
-      const width = scrollRef.current.clientWidth;
-      const index = Math.round(scrollLeft / width);
-      setActiveIndex(index);
+      scrollRef.current.scrollBy({ left: -400, behavior: "smooth" });
     }
   };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({ left: 400, behavior: "smooth" });
+    }
+  };
+
+  const filteredProjects = projects.filter(
+    (p) => activeTab === "All" || p.category === activeTab
+  );
 
   return (
     <section
       id="projects"
-      className="relative bg-white text-black py-16 overflow-hidden px-2"
+      className="relative bg-white text-gray-900 py-20 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Section Title */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 text-center"
-        >
-          Featured Projects
-        </motion.h2>
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+        {/* Section Title & Navigation */}
+        <div className="mb-8 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="text-4xl sm:text-5xl lg:text-[64px] font-extrabold leading-[1.05] uppercase tracking-tighter"
+          >
+            FEATURED <span className="text-[#946E1C]">PROJECTS</span>
+          </motion.h2>
 
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-          A selection of my web and full-stack projects, highlighting clean
-          design and smooth user experiences.
-        </p>
-
-        {/* Grid Layout on Desktop / Carousel on Mobile */}
-        <div
-          ref={scrollRef}
-          onScroll={handleScroll}
-          className="flex sm:grid overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none gap-6 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3 pb-6 sm:pb-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
-        >
-          <AnimatePresence mode="popLayout">
-            {visibleProjects.map((project, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{
-                  duration: 0.5,
-                  ease: "easeOut",
-                  delay: index * 0.05,
-                }}
-                layout
-                viewport={{ once: true }}
-                whileHover={{ y: -6 }}
-                onClick={() =>
-                  window.open(project.link, "_blank", "noopener,noreferrer")
-                }
-                className="min-w-full sm:min-w-0 snap-center sm:snap-none bg-transparent hover:bg-white hover:shadow-xl p-4 -m-4 rounded-[24px] transition-all duration-300 flex flex-col cursor-pointer group"
-              >
-                {/* Image with cutout button */}
-                <div className="relative w-full h-56 sm:h-[260px] rounded-[20px] overflow-hidden mb-5">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {/* Arrow Button */}
-                  <div className="absolute bottom-3 right-3">
-                    <div className={`w-12 h-12 rounded-full border-[4px] border-white flex items-center justify-center text-white transition-transform group-hover:-rotate-12 group-hover:scale-110 shadow-sm ${colors[index % colors.length]}`}>
-                      <ArrowUpRight strokeWidth={2.5} size={20} />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 flex flex-col relative px-2 mt-2">
-                  {/* Title */}
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 flex-1">
-                    {project.title.split("–")[0].trim()}
-                  </h3>
-
-                  {/* Tech badges */}
-                  <div className="flex flex-wrap gap-2 mt-auto">
-                    {project.tech.slice(0, 3).map((t, i) => (
-                      <span
-                        key={i}
-                        className={`text-gray-700 text-[10px] font-bold uppercase px-3 py-1.5 rounded-md ${colors[(index + i) % colors.length]}`}
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+          {/* Navigation Buttons */}
+          <div className="flex gap-4 pb-2">
+            <button
+              onClick={scrollLeft}
+              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
+              aria-label="Previous project"
+            >
+              <ChevronLeft size={24} className="text-gray-600" />
+            </button>
+            <button
+              onClick={scrollRight}
+              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors shadow-sm cursor-pointer"
+              aria-label="Next project"
+            >
+              <ChevronRight size={24} className="text-gray-600" />
+            </button>
+          </div>
         </div>
 
-        {/* Mobile Carousel Indicators */}
-        <div className="flex sm:hidden justify-center gap-2 mb-8">
-          {visibleProjects.map((_, i) => (
-            <div
-              key={i}
-              className={`h-1.5 rounded-full transition-all duration-300 ${
-                activeIndex === i ? "w-6 bg-[#946E1C]" : "w-2 bg-gray-300"
+        {/* Tabs */}
+        <div className="inline-flex flex-wrap rounded-full border border-gray-200 bg-gray-50/50 p-1 mb-10">
+          {["All", "App", "Web", "Graphic"].map((tab, index) => (
+            <button
+              key={tab}
+              onClick={() => {
+                setActiveTab(tab);
+                if (scrollRef.current) {
+                  scrollRef.current.scrollTo({ left: 0, behavior: "smooth" });
+                }
+              }}
+              className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all cursor-pointer ${
+                activeTab === tab
+                  ? "bg-[#946E1C] text-white shadow-md"
+                  : "text-gray-500 hover:text-[#946E1C]"
               }`}
-            />
+            >
+              0{index + 1} {tab}
+            </button>
           ))}
         </div>
 
-        {/* Load More Button */}
-        {projects.length > 6 && (
-          <div className="mt-8 sm:mt-16 text-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setShowAll(!showAll)}
-              className="px-10 py-4 bg-black text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-            >
-              {showAll ? "Show Less" : "Load More Projects"}
-            </motion.button>
-          </div>
-        )}
+        {/* Horizontal Scroll Layout */}
+        <div
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 pb-12 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => {
+              const color = colors[index % colors.length];
+              return (
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3 }}
+                  key={project.title}
+                  onClick={() => window.open(project.link, "_blank")}
+                  className={`min-w-[85vw] sm:min-w-[550px] lg:min-w-[700px] h-[400px] sm:h-[380px] snap-center rounded-[32px] flex flex-col sm:flex-row overflow-hidden cursor-pointer group flex-shrink-0 shadow-xl border-8 ${color.border}`}
+                >
+                  {/* Left Content */}
+                  <div className={`w-full sm:w-1/2 h-[55%] sm:h-full p-8 sm:p-10 flex flex-col justify-end ${color.bg} text-[#1A1A1A]`}>
+                    <div className="mb-2">
+                      <div className="text-xs font-semibold tracking-widest uppercase opacity-70 font-mono mb-4">
+                        0{index + 1} {project.type}
+                      </div>
+                      <h3 className="text-3xl sm:text-4xl font-black uppercase leading-[1.05] tracking-tight">
+                        {project.title.split("–")[0].trim()}
+                      </h3>
+                    </div>
+                  </div>
+                  {/* Right Image */}
+                  <div className="w-full sm:w-1/2 h-[45%] sm:h-full relative bg-gray-100">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
