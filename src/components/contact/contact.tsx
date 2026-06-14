@@ -72,27 +72,27 @@ const Contact = () => {
   return (
     <section id="contact" className="w-full bg-[#FCFBF9] py-20 lg:py-32 font-sans overflow-hidden">
       <div className="max-w-[800px] mx-auto px-6 sm:px-8 flex flex-col items-center">
-        
+
         {/* Headings */}
         <div className="text-center mb-4 relative">
           <h2 className="text-4xl sm:text-5xl md:text-[56px] font-extrabold tracking-tight leading-[1.1] text-black">
-            <span className="text-gray-400">Say Hii!</span> and tell me about<br />your idea
+            <span className="text-gray-400">Say Hiii!</span> and tell me about<br />your idea
           </h2>
           {/* Hand-drawn Arrow under Say Hi! */}
           <div className="absolute left-[15%] sm:left-[20%] -bottom-4 hidden sm:block">
             <svg width="120" height="24" viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5 12 Q 50 14, 110 12 M 95 5 L 115 12 L 95 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M5 12 Q 50 14, 110 12 M 95 5 L 115 12 L 95 19" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </div>
         </div>
-        
+
         <p className="text-gray-600 text-lg mb-16">
           Have a nice works? reach out and let's chat.
         </p>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="w-full relative mt-8">
-          
+
           {/* Dot Grid Decoration */}
           <div className="absolute -right-8 -top-8 hidden md:grid grid-cols-4 gap-2 opacity-60">
             {Array.from({ length: 36 }).map((_, i) => (
@@ -161,11 +161,10 @@ const Contact = () => {
                   key={service}
                   type="button"
                   onClick={() => setSelectedService(service)}
-                  className={`px-6 py-3 rounded-full text-sm font-medium border transition-colors cursor-pointer ${
-                    selectedService === service
-                      ? "bg-black text-white border-black"
-                      : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
-                  }`}
+                  className={`px-6 py-3 rounded-full text-sm font-medium border transition-colors cursor-pointer ${selectedService === service
+                    ? "bg-black text-white border-black"
+                    : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
+                    }`}
                 >
                   {service}
                 </button>
@@ -178,7 +177,7 @@ const Contact = () => {
             {/* Squiggly Arrow */}
             <div className="absolute -left-4 sm:right-32 sm:left-auto -top-8 sm:-top-10">
               <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform -rotate-12 scale-110">
-                <path d="M30 5 L20 15 L28 20 L10 35 M10 35 L12 25 M10 35 L22 35" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M30 5 L20 15 L28 20 L10 35 M10 35 L12 25 M10 35 L22 35" stroke="black" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
@@ -192,7 +191,7 @@ const Contact = () => {
               I'll must get back to you within 24 hours
             </p>
           </div>
-          
+
         </form>
       </div>
     </section>
