@@ -76,7 +76,7 @@ const Contact = () => {
         {/* Headings */}
         <div className="text-center mb-4 relative">
           <h2 className="text-4xl sm:text-5xl md:text-[56px] font-extrabold tracking-tight leading-[1.1] text-black">
-            <span className="text-gray-400">Say Hi!</span> and tell me about<br />your idea
+            <span className="text-gray-400">Say Hii!</span> and tell me about<br />your idea
           </h2>
           {/* Hand-drawn Arrow under Say Hi! */}
           <div className="absolute left-[15%] sm:left-[20%] -bottom-4 hidden sm:block">
