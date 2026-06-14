@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 const Certifications = () => {
   const certs = [
@@ -75,11 +76,13 @@ const Certifications = () => {
 
               {/* Middle: Image */}
               <div className="flex-1 px-5 pt-4">
-                <div className="w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-md">
-                  <img
+                <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden shadow-md">
+                  <Image
                     src={cert.image}
                     alt={cert.title}
-                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>

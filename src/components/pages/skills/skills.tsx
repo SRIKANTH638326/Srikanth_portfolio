@@ -1,41 +1,23 @@
-/* eslint-disable react/jsx-key */
 "use client";
 
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import React from "react";
 import {
   FaReact,
-  FaNodeJs,
-  FaDatabase,
-  FaGitAlt,
   FaPython,
-  FaWhatsapp,
-  FaAws,
 } from "react-icons/fa";
 import {
   SiMongodb,
-  SiNextdotjs,
   SiTailwindcss,
-  SiTypescript,
   SiJavascript,
   SiHtml5,
-  SiRedux,
-  SiPostman,
   SiVercel,
-
-  SiNetlify,
-  SiExpress,
   SiGit,
-  SiFirebase,
   SiFigma,
   SiFramer,
   SiMysql,
 } from "react-icons/si";
 import Image from "next/image";
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 // VSCode SVG Component
 const VSCodeIcon = () => (
@@ -50,43 +32,7 @@ const VSCodeIcon = () => (
   </div>
 );
 
-// Acertinity UI / Shadcn placeholder icon
-const AcertinityUIIcon = () => (
-  <svg
-    width="40"
-    height="40"
-    viewBox="0 0 64 64"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect x="2" y="2" width="60" height="60" rx="8" ry="8" fill="#4F46E5" />
-    <text
-      x="32"
-      y="42"
-      fontSize="28"
-      textAnchor="middle"
-      fill="white"
-      fontFamily="Arial, sans-serif"
-      fontWeight="bold"
-    >
-      A
-    </text>
-  </svg>
-);
 
-// Shiprocket SVG Icon
-const ShiprocketIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#852f8d" d="M256 0c-141.38 0-256 114.62-256 256s114.62 256 256 256 256-114.62 256-256-114.62-256-256-256zm0 464c-114.88 0-208-93.12-208-208s93.12-208 208-208 208 93.12 208 208-93.12 208-208 208z" />
-    <path fill="#852f8d" d="M371.4 140.6c-4.7-4.7-12.3-4.7-17 0l-128.4 128.4-56.4-56.4c-4.7-4.7-12.3-4.7-17 0s-4.7 12.3 0 17l64.9 64.9c4.7 4.7 12.3 4.7 17 0l136.9-136.9c4.7-4.7 4.7-12.3 0-17z" />
-  </svg>
-);
-
-// MSG91 SVG Icon
-const MSG91Icon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#ed1c24" d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-  </svg>
-);
 
 // Render Logo
 const RenderIcon = () => (
@@ -96,28 +42,7 @@ const RenderIcon = () => (
   </svg>
 );
 
-// Brevo Icon
-const BrevoIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path fill="#00df9a" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5z" />
-  </svg>
-);
 
-// GSAP Logo
-const GSAPIcon = () => (
-  <svg
-    width="40"
-    height="40"
-    viewBox="0 0 512 512"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="256" cy="256" r="256" fill="#88CE02" />
-    <path
-      fill="#fff"
-      d="M322.9 167.3c-9.6-3.8-20.5.9-24.3 10.5l-27.6 69.3-37.3-47.6c-7-9-20-10.7-29-3.7s-10.7 20-3.7 29l55.7 71c4.2 5.4 10.8 8.4 17.6 8.1 7-.3 13.2-4.6 15.9-11l41.2-103.4c3.8-9.6-0.9-20.5-10.5-24.3z"
-    />
-  </svg>
-);
 
 // Adobe XD Icon
 const AdobeXDIcon = () => (
@@ -159,13 +84,7 @@ const TableauIcon = () => (
   </svg>
 );
 
-// Excel Icon
-const ExcelIcon = () => (
-  <svg width="40" height="40" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <rect width="64" height="64" rx="12" fill="#217346" />
-    <text x="32" y="42" fontSize="26" textAnchor="middle" fill="white" fontFamily="Arial, sans-serif" fontWeight="bold">X</text>
-  </svg>
-);
+
 
 // Matplotlib Icon
 const MatplotlibIcon = () => (
@@ -192,75 +111,7 @@ const StitchIcon = () => (
   </svg>
 );
 
-// Floating Background Icons
-const FloatingIcons = () => {
-  const iconsRef = useRef<HTMLDivElement[]>([]);
 
-  useEffect(() => {
-    iconsRef.current.forEach((el, i) => {
-      if (!el) return;
-      gsap.to(el, {
-        y: "random(-10,10)",
-        rotation: "random(-2,2)",
-        duration: 8 + i,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut",
-        delay: i * 0.3,
-      });
-    });
-  }, []);
-
-  const icons = [
-    <div className="text-cyan-400/10">
-      <FaReact size={40} />
-    </div>,
-    <div className="text-green-500/10">
-      <FaNodeJs size={40} />
-    </div>,
-    <div className="text-yellow-400/10">
-      <FaDatabase size={40} />
-    </div>,
-    <div className="text-green-400/10">
-      <SiMongodb size={40} />
-    </div>,
-    <div className="text-gray-400/10">
-      <SiNextdotjs size={40} />
-    </div>,
-    <div className="text-sky-400/10">
-      <SiTailwindcss size={40} />
-    </div>,
-    <div className="text-blue-600/10">
-      <SiTypescript size={40} />
-    </div>,
-    <div className="text-orange-500/10">
-      <FaGitAlt size={40} />
-    </div>,
-    <div className="text-blue-300/10">
-      <FaPython size={40} />
-    </div>,
-  ];
-
-  return (
-    <div className="absolute inset-0 pointer-events-none overflow-hidden">
-      {icons.map((icon, i) => (
-        <div
-          key={i}
-          ref={(el) => {
-            if (el) iconsRef.current[i] = el;
-          }}
-          className="absolute"
-          style={{
-            top: `${Math.random() * 80 + 10}%`,
-            left: `${Math.random() * 80 + 10}%`,
-          }}
-        >
-          {icon}
-        </div>
-      ))}
-    </div>
-  );
-};
 
 // Skills Array
 
@@ -384,7 +235,7 @@ const Skills = () => {
   const row1 = skills.slice(0, Math.ceil(skills.length / 2));
   const row2 = skills.slice(Math.ceil(skills.length / 2));
 
-  const percentages = ["98%", "95%", "92%", "90%", "88%", "85%"];
+
 
   return (
     <section id="skills" className="relative py-20 bg-[#FCFBF9] overflow-hidden">
