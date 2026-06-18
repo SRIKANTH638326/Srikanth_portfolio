@@ -7,21 +7,21 @@ const Experience = () => {
   const experiences = [
     {
       company: "Zikrabyte Solutions",
-      duration: "Jan 2025 – Present",
+      duration: "May 2025 – Present",
       description: "Leading UI/UX design initiatives, crafting user-centered digital experiences for web and mobile.",
-      tags: ["UIUX", "Prototyping"],
+      tags: ["UI/UX", "Prototyping"],
     },
     {
-      company: "Freelance",
-      duration: "2024 – 2025",
+      company: "FITA Academy",
+      duration: "Nov 2023 – Jan 2024 ",
       description: "Delivered UI/UX design and development projects, collaborating with clients to bring creative visions to life.",
-      tags: ["UIUX", "Branding"],
+      tags: ["UI/UX", "Development"],
     },
     {
-      company: "Creative Studio Co.",
-      duration: "2023 – 2024",
-      description: "Designed brand identities and digital interfaces for early-stage startups, focusing on visual consistency and user engagement.",
-      tags: ["Branding", "UIUX"],
+      company: "Training Trains Software Inc",
+      duration: "June 2023 – July 2023",
+      description: "Ensured seamless design implementation by maintaining consistent communication with the development team.",
+      tags: ["Web Design", "UI/UX"],
     },
   ];
 

@@ -86,8 +86,8 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Srikanth_Resume.pdf";
-    link.setAttribute("download", "Srikanth_Resume.pdf");
+    link.href = "/Srikanth_Resume_Improved (1).pdf";
+    link.setAttribute("download", "Srikanth_Resume_Improved (1).pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -97,7 +97,6 @@ const Navbar = () => {
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
-
     { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
   ];

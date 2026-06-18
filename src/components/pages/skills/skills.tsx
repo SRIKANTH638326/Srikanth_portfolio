@@ -279,7 +279,7 @@ const Skills = () => {
           {[...row1, ...row1].map((skill, i) => (
             <div
               key={`row1-${i}`}
-              className="flex flex-col items-center justify-center pt-8 pb-10 mx-3 sm:mx-4 w-32 sm:w-40 rounded-2xl bg-gray-50 flex-shrink-0 transition-transform duration-300 hover:-translate-y-2"
+              className="flex flex-col items-center justify-center pt-8 pb-10 mx-3 sm:mx-4 w-32 sm:w-40 rounded-2xl bg-[#F2F2F2] flex-shrink-0 transition-transform duration-300 hover:-translate-y-2"
             >
               <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3">
                 {skill.icon}
@@ -296,7 +296,7 @@ const Skills = () => {
           {[...row2, ...row2].map((skill, i) => (
             <div
               key={`row2-${i}`}
-              className="flex flex-col items-center justify-center pt-8 pb-10 mx-3 sm:mx-4 w-32 sm:w-40 rounded-2xl bg-gray-50 flex-shrink-0 transition-transform duration-300 hover:-translate-y-2"
+              className="flex flex-col items-center justify-center pt-8 pb-10 mx-3 sm:mx-4 w-32 sm:w-40 rounded-2xl bg-[#F2F2F2] flex-shrink-0 transition-transform duration-300 hover:-translate-y-2"
             >
               <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shadow-sm mb-3">
                 {skill.icon}

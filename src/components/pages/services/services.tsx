@@ -27,7 +27,7 @@ const Services = () => {
           
           <div className="h-[1px] bg-gray-200 flex-grow hidden xl:block"></div>
           
-          <div className="flex items-center justify-center gap-3 xl:px-8 py-4 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-gray-800 hover:text-black transition-colors cursor-pointer w-full xl:w-auto">
+          <div className="flex items-center justify-center gap-3 xl:px-8 py-4 text-[10px] sm:text-xs font-bold tracking-[0] text-gray-800 hover:text-black transition-colors cursor-pointer w-full xl:w-auto">
             <svg width="14" height="10" viewBox="0 0 14 10" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12.6 0H1.4C0.6 0 0 0.6 0 1.4V8.6C0 9.4 0.6 10 1.4 10H12.6C13.4 10 14 9.4 14 8.6V1.4C14 0.6 13.4 0 12.6 0ZM12.6 1.4V1.8L7 5.4L1.4 1.8V1.4H12.6ZM1.4 8.6V3.5L7 7L12.6 3.5V8.6H1.4Z"/></svg>
             srikanthc061@gmail.com
           </div>

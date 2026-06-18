@@ -25,12 +25,13 @@ const projects = [
     link: "https://sellsmart.co.in/",
   },
   {
-    title: "GETFIXED – Electronics Repair Booking Platform",
+    title: "SmartEdLab – AI-powered language learning platform",
     description:
       "Architected a robust REST API backend managing complex dual-sided marketplace operations. Engineered end-to-end order lifecycles with dynamic state transitions, real-time technician tracking, and Role-Based Access Control. Features a specialized Partner Management module with OTP-authenticated QC logins, system-wide 'Partner ID' tracking, and secure document pipelines for automated PDF processing.",
-    image: "/project/getfixed.png",
-    type: "Full Stack",
-    category: "Web",
+    image: "/project/smartEdlab.png",
+    
+    type: "UI/UX Design",
+    category: "Web Application",
     tech: [
       "Next.js",
       "Node.js",
@@ -42,7 +43,7 @@ const projects = [
       "Multer",
       "REST API",
     ],
-    link: "https://getfixed.co.in/",
+    link: "blank",
   },
   {
     title: "Code Shark API – EdTech & Agency Backend Platform",
