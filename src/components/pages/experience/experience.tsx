@@ -6,10 +6,10 @@ import Image from "next/image";
 const Experience = () => {
   const experiences = [
     {
-      company: "Zikrabyte Solutions",
-      duration: "May 2025 – Present",
-      description: "Leading UI/UX design initiatives, crafting user-centered digital experiences for web and mobile.",
-      tags: ["UI/UX", "Prototyping"],
+      company: "Training Trains Software Inc",
+      duration: "June 2023 – July 2023",
+      description: "Ensured seamless design implementation by maintaining consistent communication with the development team.",
+      tags: ["Web Design"],
     },
     {
       company: "FITA Academy",
@@ -18,10 +18,10 @@ const Experience = () => {
       tags: ["UI/UX", "Development"],
     },
     {
-      company: "Training Trains Software Inc",
-      duration: "June 2023 – July 2023",
-      description: "Ensured seamless design implementation by maintaining consistent communication with the development team.",
-      tags: ["Web Design", "UI/UX"],
+      company: "Zikrabyte Solutions",
+      duration: "May 2025 – Present",
+      description: "Leading UI/UX design initiatives, crafting user-centered digital experiences for web and mobile.",
+      tags: ["UI/UX","Prototyping"],
     },
   ];
 

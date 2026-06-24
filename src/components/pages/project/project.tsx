@@ -8,7 +8,7 @@ const projects = [
     title: "BECHDU – Electronics Buy & Sell Marketplace",
     description:
       "A comprehensive electronics marketplace with multi-vendor support. Features a React admin dashboard and a Flutter QC mobile app for partners. Engineered with automated PDF invoice generation and receipt management for both buying and selling sides, AWS S3 for secure KYC/QC storage, and real-time Firebase tracking with automated data synchronization.",
-    image: "/project/bechdu.png",
+    image: "/project/Bechdu Cover page.png",
     type: "UI/UX Design",
     category: "App",
     tech: ["Figma", "Adobe photoshop"],
@@ -18,7 +18,7 @@ const projects = [
     title: "SellSmart – Used Electronics Selling Platform",
     description:
       "Platform to sell electronics featuring a React admin dashboard and a Flutter QC mobile app for partners. Manages end-to-end lifecycles with smart routing, dynamic rewards, and passwordless MSG91 OTP authentication. Engineered with AWS S3 for secure KYC document storage, automated data synchronization, and on-the-fly PDF invoice generation.",
-    image: "/project/sellsmart.png",
+    image: "/project/Sellsmart Cover Page.png",
     type: "UI/UX Design",
     category: "App",
     tech: ["Figma", "Adobe photoshop", "Adobe Xd"],
@@ -28,11 +28,11 @@ const projects = [
     title: "SmartEdLab – AI-powered language learning platform",
     description:
       "Architected a robust REST API backend managing complex dual-sided marketplace operations. Engineered end-to-end order lifecycles with dynamic state transitions, real-time technician tracking, and Role-Based Access Control. Features a specialized Partner Management module with OTP-authenticated QC logins, system-wide 'Partner ID' tracking, and secure document pipelines for automated PDF processing.",
-    image: "/project/smartEdlab.png",
-    
+    image: "/project/Smartedlab Cover Page (2).png",
     type: "UI/UX Design",
-    category: "Web Application",
+    category: "Web",
     tech: [
+      "Figma",
       "Next.js",
       "Node.js",
       "Express.js",
@@ -43,7 +43,7 @@ const projects = [
       "Multer",
       "REST API",
     ],
-    link: "blank",
+    link: "https://smartedlab-ui.vercel.app/",
   },
   {
     title: "Code Shark API – EdTech & Agency Backend Platform",
@@ -68,12 +68,12 @@ const projects = [
     link: "https://www.code-sharks.com/",
   },
   {
-    title: "MGBW – Mangalore Ganesh Beedi Works",
+    title: "PITCS",
     description:
       "Official website showcasing the diverse MGBW portfolio. Engineered a highly optimized, dynamic hero video builder serving device-specific assets via responsive media architecture. Solved strict Safari/iOS autoplay restrictions using resilient fallback strategies, event-driven silent retries, and automated listener cleanup pipelines for blazing-fast performance.",
-    image: "/project/mgbw.png",
-    type: "Frontend",
-    category: "Graphic",
+    image: "/project/PITCS Cover Page.png",
+    type: "UI/UX Design",
+    category: "Web",
     tech: [
       "Next.js",
       "React",
@@ -83,7 +83,7 @@ const projects = [
       "Event-Driven",
       "Brevo",
     ],
-    link: "https://mgbwgroup.com/",
+    link: "https://pitcs.in/",
   },
   {
     title: "ARD PERFORMANCE – High-Performance Automotive Ecosystem",
@@ -143,7 +143,7 @@ const Projects = () => {
   return (
     <section id="projects" className="relative bg-[#FCFBF9] text-gray-900 py-20 lg:py-32 overflow-hidden font-sans">
       <div className="max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16">
-        
+
         {/* Header Section */}
         <div className="relative mb-20 lg:mb-32 flex flex-col items-center justify-center">
           {/* Faded background text */}
@@ -162,11 +162,10 @@ const Projects = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`transition-colors ${
-                  activeTab === tab
-                    ? "text-black font-semibold"
-                    : "text-gray-500 hover:text-black font-medium"
-                }`}
+                className={`transition-colors ${activeTab === tab
+                  ? "text-black font-semibold"
+                  : "text-gray-500 hover:text-black font-medium"
+                  }`}
               >
                 {tab}
               </button>
@@ -181,12 +180,12 @@ const Projects = () => {
         {/* Project Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredProjects.map((project) => (
-            <div 
-              key={project.title} 
-              className="flex flex-col group cursor-pointer" 
+            <div
+              key={project.title}
+              className="flex flex-col group cursor-pointer"
               onClick={() => window.open(project.link, "_blank")}
             >
-              
+
               {/* Image Container */}
               <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-4 bg-[#F8F8F8] border border-gray-100">
                 <Image
@@ -195,7 +194,7 @@ const Projects = () => {
                   fill
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
-                
+
                 {/* Hover Arrow Button */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/5 backdrop-blur-[2px]">
                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
@@ -208,7 +207,7 @@ const Projects = () => {
               <h3 className="text-base sm:text-lg font-semibold text-black mb-3 leading-snug">
                 {project.title.split('–')[0].trim()}
               </h3>
-              
+
               {/* Tags */}
               <div className="flex gap-2">
                 <span className="px-3 py-1.5 border border-gray-200 rounded-full text-[11px] font-medium text-gray-700 bg-transparent">
