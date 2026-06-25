@@ -147,10 +147,10 @@ const Projects = () => {
         {/* Header Section */}
         <div className="relative mb-20 lg:mb-32 flex flex-col items-center justify-center">
           {/* Faded background text */}
-          <h1 className="absolute text-[80px] sm:text-[140px] lg:text-[180px] font-bold text-gray-900 opacity-[0.03] tracking-wider uppercase select-none pointer-events-none whitespace-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <h1 className="absolute text-[80px] sm:text-[140px] lg:text-[180px] font-bold text-[#007ABC] opacity-[10%] tracking-wider uppercase select-none pointer-events-none whitespace-nowrap top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             PORTFOLIO
           </h1>
-          <h2 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight z-10 text-black">
+          <h2 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight z-10 text-[#007ABC]">
             /SELECTED WORK
           </h2>
         </div>

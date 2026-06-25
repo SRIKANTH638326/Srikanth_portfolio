@@ -19,7 +19,7 @@ const Hero = () => {
   const yContent = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <div ref={containerRef} className="w-full relative bg-[#FCFBF9] overflow-hidden font-sans">
+    <div ref={containerRef} className="w-full relative bg-[#] overflow-hidden font-sans">
       {/* Background colorful blur */}
       <motion.div 
         style={{ y: yBg }}
@@ -54,12 +54,12 @@ const Hero = () => {
             <div className="text-3xl">👋</div>
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-black tracking-tight leading-none">
               Hello! <br className="hidden md:block lg:hidden" />
-              <span className="font-extrabold whitespace-nowrap">I&apos;m Srikanth</span>
+              <span className="font-extrabold whitespace-nowrap text-[#007ABC]">I&apos;m Srikanth</span>
             </h1>
             
             <div className="flex items-center gap-4 w-full">
               <div className="h-[2px] w-24 bg-gray-300" />
-              <h2 className="text-2xl sm:text-3xl font-light text-gray-600">
+              <h2 className="text-2xl sm:text-3xl font-light text-[#007ABC]">
                 UI/UX Designer
               </h2>
               <span className="text-3xl text-black">✦</span>
@@ -85,12 +85,12 @@ const Hero = () => {
             </div>
 
             <div className="flex items-center gap-8 pt-8">
-              <button className="bg-[#111] hover:bg-black text-white px-8 py-3.5 rounded-[2rem] text-sm font-medium transition-colors">
+              <button className="bg-[#007ABC] hover:bg-[#007ABC] text-white px-8 py-3.5 rounded-[2rem] text-sm font-medium transition-colors">
                 Let&apos;s Talk
               </button>
-              <button className="text-black font-medium text-sm flex items-center gap-2 border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-colors">
+              <a href="/Srikanth_Resume_Improved.pdf" target="public/Srikanth_Resume_Improved.pdf" rel="noopener noreferrer" className="text-black font-medium text-sm flex items-center gap-2 border-b border-black pb-1 hover:text-gray-600 hover:border-gray-600 transition-colors">
                 Download Cv <span>↓</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -110,8 +110,8 @@ const Hero = () => {
       </motion.div>
 
       {/* Marquee Bottom Banner */}
-      <div className="w-full bg-[#111] py-5 overflow-hidden flex items-center">
-        <div className="flex whitespace-nowrap animate-marquee items-center gap-12 text-white font-sans font-bold tracking-[0.2em] text-sm sm:text-base">
+      <div className="w-full bg-[#007ABC] py-5 overflow-hidden flex items-center">
+        <div className="flex whitespace-nowrap animate-marquee items-center gap-12 text-[#FCFBF9] font-sans bg- font-bold tracking-[0] text-sm sm:text-base">
           <span>✦</span>
           <span>WEB DESIGN</span>
           <span>✦</span>

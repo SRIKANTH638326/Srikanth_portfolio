@@ -76,7 +76,7 @@ const Contact = () => {
         {/* Headings */}
         <div className="text-center mb-4 relative">
           <h2 className="text-4xl sm:text-5xl md:text-[56px] font-extrabold tracking-tight leading-[1.1] text-black">
-            <span className="text-gray-400">Say Hiii!</span> and tell me about<br />your idea
+            <span className="text-[#007ABC]">Say Hiii!</span> and tell me about<br />your idea
           </h2>
           {/* Hand-drawn Arrow under Say Hi! */}
           <div className="absolute left-[15%] sm:left-[20%] -bottom-4 hidden sm:block">
@@ -162,8 +162,8 @@ const Contact = () => {
                   type="button"
                   onClick={() => setSelectedService(service)}
                   className={`px-6 py-3 rounded-full text-sm font-medium border transition-colors cursor-pointer ${selectedService === service
-                    ? "bg-black text-white border-black"
-                    : "bg-white text-gray-700 border-gray-200 hover:border-gray-400"
+                    ? "bg-[#007ABC] text-white border-[#007ABC]"
+                    : "bg-white text-gray-700 border-gray-200 hover:border-[#007ABC]"
                     }`}
                 >
                   {service}
@@ -183,7 +183,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-black text-white px-10 py-4 rounded-full font-medium hover:bg-gray-800 transition cursor-pointer text-sm shadow-md"
+              className="bg-[#007ABC] text-white px-10 py-4 rounded-full font-medium hover:bg-[#007ABC] transition cursor-pointer text-sm shadow-md"
             >
               Send Me
             </button>

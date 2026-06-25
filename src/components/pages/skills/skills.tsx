@@ -262,9 +262,9 @@ const Skills = () => {
       <div className="relative max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16 z-10 mb-16">
         <div className="text-left space-y-2">
           <p className="text-sm font-semibold text-gray-500 tracking-wider uppercase mb-4">
-            <span className="text-[#946E1C] mr-2">—</span>My Favorite Tools
+            <span className="text-[#007ABC] mr-2">—</span>My Favorite Tools
           </p>
-          <h2 className="text-4xl md:text-5xl font-light text-[#946E1C]">
+          <h2 className="text-4xl md:text-5xl font-light text-[#007ABC]">
             Exploring the Tools
           </h2>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">

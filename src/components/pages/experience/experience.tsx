@@ -32,11 +32,11 @@ const Experience = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start mb-20 gap-10">
           <div className="flex flex-col max-w-xl">
-            <div className="flex items-center gap-2 text-sm font-medium mb-6 text-black">
-              <span className="w-1.5 h-1.5 rounded-full bg-black"></span>
+            <div className="flex items-center gap-2 text-sm font-medium mb-6 text-[#007ABC]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#007ABC]"></span>
               Experiences
             </div>
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-black leading-[1.1]">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[#007ABC] leading-[1.1]">
               Explore My Design <br /> Journey
             </h2>
           </div>
@@ -45,7 +45,7 @@ const Experience = () => {
             <p className="text-gray-500 text-sm leading-relaxed font-medium">
               Over the past 1.3+ years, I&apos;ve had the opportunity to work on a wide range of design projects, collaborating with diverse teams and clients to bring creative visions to life.
             </p>
-            <a href="#contact" className="text-black font-semibold text-sm border-b border-black pb-0.5 self-start hover:text-gray-600 hover:border-gray-600 transition-colors">
+            <a href="#contact" className="text-[#007ABC] font-semibold text-sm border-b border-[#007ABC] pb-0.5 self-start hover:text-gray-600 hover:border-gray-600 transition-colors">
               Book A Call ↗
             </a>
           </div>
@@ -84,7 +84,7 @@ const Experience = () => {
                         key={tag}
                         className={`px-5 py-2 rounded-full text-xs font-medium transition-colors ${
                           isLast
-                            ? "bg-[#1A1A1A] text-white"
+                            ? "bg-[#007ABC] text-white"
                             : "bg-gray-100 text-gray-600"
                         }`}
                       >
@@ -111,10 +111,10 @@ const Experience = () => {
                     </div>
 
                     <div className="w-full md:w-1/2 flex items-end justify-between gap-6 pb-2">
-                      <p className="text-sm text-gray-500 leading-relaxed max-w-[280px] font-medium">
+                      <p className="text-sm text-gray-500 leading-relaxed max-w-[100%] font-medium">
                         From crafting seamless user experiences to leading strategic product design initiatives, each experience has shaped my approach and strengthened my passion for solving design challenges.
                       </p>
-                      <button className="w-16 h-16 rounded-full bg-[#1A1A1A] text-white flex items-center justify-center flex-shrink-0 hover:bg-black hover:scale-105 transition-all shadow-lg cursor-pointer">
+                      <button className="w-16 h-16 rounded-full bg-[#007ABC] text-white flex items-center justify-center flex-shrink-0 hover:bg-black hover:scale-105 transition-all shadow-lg cursor-pointer">
                         <span className="text-2xl font-light leading-none">↗</span>
                       </button>
                     </div>

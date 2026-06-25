@@ -86,8 +86,8 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Srikanth_Resume_Improved (1).pdf";
-    link.setAttribute("download", "Srikanth_Resume_Improved (1).pdf");
+    link.href = "/Srikanth_Resume_Improved(1).pdf";
+    link.setAttribute("download", "Srikanth_Resume_Improved(1).pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -119,7 +119,7 @@ const Navbar = () => {
             >
               <span
                 className="text-gray-900 
-               text-base sm:text-lg font-bold tracking-tight"
+               text-base text-bold sm:text-lg font-bold tracking-tight"
               >
                 Srikanth
               </span>
@@ -135,13 +135,13 @@ const Navbar = () => {
                   }}
                   href={item.href}
                   className={`relative text-sm font-medium transition-all duration-300 group cursor-pointer ${activeSection === item.href.replace("#", "")
-                      ? "text-[#946E1C]"
-                      : "text-gray-600 hover:text-[#946E1C]"
+                      ? "text-[#007ABC]"
+                      : "text-gray-600 hover:text-[#007ABC]"
                     }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#946E1C] transition-all duration-300 ${activeSection === item.href.replace("#", "")
+                    className={`absolute left-0 -bottom-1 h-0.5 bg-[#007ABC] transition-all duration-300 ${activeSection === item.href.replace("#", "")
                         ? "w-full"
                         : "w-0 group-hover:w-full"
                       }`}

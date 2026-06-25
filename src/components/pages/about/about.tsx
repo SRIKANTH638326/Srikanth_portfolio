@@ -15,16 +15,16 @@ const About = () => {
             </span>
           </div>
 
-          <div className="text-black">
+          <div className="text-[#007ABC]">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform rotate-45 scale-125">
-              <path d="M10 2H14V10H22V14H14V22H10V14H2V10H10V2Z" stroke="currentColor" strokeWidth="1.2" strokeLinejoin="round"/>
+              <path d="M10 2H14V10H22V14H14V22H10V14H2V10H10V2Z" stroke="#007ABC" strokeWidth="1.5" strokeLinejoin="round"/>
             </svg>
           </div>
         </div>
 
         {/* Large Quote / Bio */}
         <div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl letter-spacing-[0.4px] lg:text-[34px] font-bold text-black leading-tight tracking-tight max-w-[100%]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[34px] opacity-80 font-semibold text-[#000000] leading-tight tracking-tight max-w-[100%]">
             UI/UX Designer with 1.3+ years of experience creating user-centered digital experiences for web and mobile applications. Skilled in user research, wireframing, prototyping, interaction design, design systems, and usability optimization. Passionate about solving complex problems through intuitive and visually engaging interfaces that balance user needs with business objectives.
           </h2>
         </div>

@@ -50,7 +50,7 @@ export default async function Image() {
             height: "500px",
             borderRadius: "50%",
             overflow: "hidden",
-            border: "12px solid #946E1C",
+            border: "12px solid #814518",
             boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
           }}
         >
