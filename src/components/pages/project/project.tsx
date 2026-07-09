@@ -8,7 +8,7 @@ const projects = [
     title: "BECHDU – Electronics Buy & Sell Marketplace",
     description:
       "A comprehensive electronics marketplace with multi-vendor support. Features a React admin dashboard and a Flutter QC mobile app for partners. Engineered with automated PDF invoice generation and receipt management for both buying and selling sides, AWS S3 for secure KYC/QC storage, and real-time Firebase tracking with automated data synchronization.",
-    image: "/project/Bechdu Cover page.png",
+    image: "/project/Bechdu_thumbnail.png",
     type: "UI/UX Design",
     category: "App",
     tech: ["Figma", "Adobe photoshop"],
@@ -18,7 +18,7 @@ const projects = [
     title: "SellSmart – Used Electronics Selling Platform",
     description:
       "Platform to sell electronics featuring a React admin dashboard and a Flutter QC mobile app for partners. Manages end-to-end lifecycles with smart routing, dynamic rewards, and passwordless MSG91 OTP authentication. Engineered with AWS S3 for secure KYC document storage, automated data synchronization, and on-the-fly PDF invoice generation.",
-    image: "/project/Sellsmart Cover Page.png",
+    image: "/project/SellSmart_thumbnail.png",
     type: "UI/UX Design",
     category: "App",
     tech: ["Figma", "Adobe photoshop", "Adobe Xd"],
@@ -28,21 +28,10 @@ const projects = [
     title: "SmartEdLab – AI-powered language learning platform",
     description:
       "Architected a robust REST API backend managing complex dual-sided marketplace operations. Engineered end-to-end order lifecycles with dynamic state transitions, real-time technician tracking, and Role-Based Access Control. Features a specialized Partner Management module with OTP-authenticated QC logins, system-wide 'Partner ID' tracking, and secure document pipelines for automated PDF processing.",
-    image: "/project/Smartedlab Cover Page (2).png",
+    image: "/project/Smartedlab_thumbnail.png",
     type: "UI/UX Design",
     category: "Web",
-    tech: [
-      "Figma",
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "TypeScript",
-      "MongoDB",
-      "Mongoose",
-      "MSG91",
-      "Multer",
-      "REST API",
-    ],
+    tech: ["Figma", "Next.js", "Node.js", "Express.js", "TypeScript", "MongoDB", "Mongoose", "MSG91", "Multer", "REST API"],
     link: "https://smartedlab-ui.vercel.app/",
   },
   {
@@ -71,7 +60,7 @@ const projects = [
     title: "PITCS",
     description:
       "Official website showcasing the diverse MGBW portfolio. Engineered a highly optimized, dynamic hero video builder serving device-specific assets via responsive media architecture. Solved strict Safari/iOS autoplay restrictions using resilient fallback strategies, event-driven silent retries, and automated listener cleanup pipelines for blazing-fast performance.",
-    image: "/project/PITCS Cover Page.png",
+    image: "/project/pitcs_thumbnail.png",
     type: "UI/UX Design",
     category: "Web",
     tech: [
@@ -104,33 +93,27 @@ const projects = [
       "Puppeteer",
       "Brevo",
     ],
-    link: "https://arduser.vercel.app/",
+    link: "#",
   },
   {
-    title: "SOCIAL NOTCH – Event Booking & Vendor Marketplace",
+    title: "Cosurj",
     description:
       "A comprehensive event marketplace managing workflows for users, vendors, and admins. Features a sophisticated backend with dynamic pricing logic, multi-level taxation, and secure Razorpay checkout integration with webhooks. Engineered an automated fulfillment pipeline utilizing Puppeteer and PDFKit for dynamic PDF ticket generation, alongside background Node Cron jobs and Brevo API email delivery.",
-    image: "/project/socialnotch.png",
-    type: "Full Stack",
+    image: "/project/Cosurj_thumbnail.png",
+    type: "UI/UX Design",
     category: "Web",
-    tech: [
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "TypeScript",
-      "MongoDB",
-      "Mongoose",
-      "AWS S3",
-      "Razorpay API",
-      "Puppeteer",
-      "PDFKit",
-      "Brevo",
-      "Node Cron",
-      "Winston Logging",
-      "JWT Auth",
-    ],
+    tech: ["Figma"],
     link: "https://socialnotch.spaces-india.in/",
   },
+  {
+    title:"Nourish",
+    description:"An AI-powered personalized nutrition and wellness app that provides food recommendations, meal plans, wellness tracking, and health insights based on your lifestyle and habits.",
+    image:"/project/Naurish_thumbnail.png",
+    type:"UI/UX Design",
+    category:"Web,App",
+    tech:["Figma","Adobe photoshop"],
+    link:"#",
+  }
 ];
 
 const Projects = () => {
