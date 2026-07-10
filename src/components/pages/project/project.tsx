@@ -2,30 +2,31 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { title } from "process";
 
 const projects = [
   {
-    title: "BECHDU – Electronics Buy & Sell Marketplace",
+    title: "Bechdu Buy & Sell",
     description:
       "A comprehensive electronics marketplace with multi-vendor support. Features a React admin dashboard and a Flutter QC mobile app for partners. Engineered with automated PDF invoice generation and receipt management for both buying and selling sides, AWS S3 for secure KYC/QC storage, and real-time Firebase tracking with automated data synchronization.",
     image: "/project/Bechdu_thumbnail.png",
     type: "UI/UX Design",
-    category: "App",
+    category: "Web",
     tech: ["Figma", "Adobe photoshop"],
     link: "https://bechdu.in/",
   },
   {
-    title: "SellSmart – Used Electronics Selling Platform",
+    title: "SellSmart Sell",
     description:
       "Platform to sell electronics featuring a React admin dashboard and a Flutter QC mobile app for partners. Manages end-to-end lifecycles with smart routing, dynamic rewards, and passwordless MSG91 OTP authentication. Engineered with AWS S3 for secure KYC document storage, automated data synchronization, and on-the-fly PDF invoice generation.",
     image: "/project/SellSmart_thumbnail.png",
     type: "UI/UX Design",
-    category: "App",
+    category: "Web",
     tech: ["Figma", "Adobe photoshop", "Adobe Xd"],
     link: "https://sellsmart.co.in/",
   },
   {
-    title: "SmartEdLab – AI-powered language learning platform",
+    title: "SmartEdLab",
     description:
       "Architected a robust REST API backend managing complex dual-sided marketplace operations. Engineered end-to-end order lifecycles with dynamic state transitions, real-time technician tracking, and Role-Based Access Control. Features a specialized Partner Management module with OTP-authenticated QC logins, system-wide 'Partner ID' tracking, and secure document pipelines for automated PDF processing.",
     image: "/project/Smartedlab_thumbnail.png",
@@ -35,43 +36,23 @@ const projects = [
     link: "https://smartedlab-ui.vercel.app/",
   },
   {
-    title: "Code Shark API – EdTech & Agency Backend Platform",
+    title: "The Duts",
     description:
       "Architected a scalable headless CMS and RESTful API backend for a dynamic EdTech platform. Designed optimized Mongoose schemas managing deeply nested arrays (Courses, Blogs). Engineered a robust concurrent multi-file upload system using Multer to parse complex multi-part form data (images, PDFs) safely into AWS S3. Built secure JWT routing workflows and integrated the Brevo API for transactional notifications.",
-    image: "/project/codesharks.png",
+    image: "/project/The Dutz_thumbnail.png",
     type: "Backend / API",
     category: "Web",
-    tech: [
-      "Node.js",
-      "Express.js",
-      "TypeScript",
-      "MongoDB",
-      "Mongoose",
-      "AWS S3",
-      "Multer",
-      "Brevo",
-      "JWT",
-      "Puppeteer",
-      "REST API",
-    ],
-    link: "https://www.code-sharks.com/",
+    tech: ["Figma"],
+    link: "https://thedutz.com/",
   },
   {
-    title: "PITCS",
+    title: "Pitcs",
     description:
       "Official website showcasing the diverse MGBW portfolio. Engineered a highly optimized, dynamic hero video builder serving device-specific assets via responsive media architecture. Solved strict Safari/iOS autoplay restrictions using resilient fallback strategies, event-driven silent retries, and automated listener cleanup pipelines for blazing-fast performance.",
-    image: "/project/pitcs_thumbnail.png",
+    image: "/project/Pitcs_thumb.png",
     type: "UI/UX Design",
     category: "Web",
-    tech: [
-      "Next.js",
-      "React",
-      "HTML5 Video API",
-      "TypeScript",
-      "Tailwind CSS",
-      "Event-Driven",
-      "Brevo",
-    ],
+    tech: ["Figma"],
     link: "https://pitcs.in/",
   },
   {
@@ -79,20 +60,9 @@ const projects = [
     description:
       "A full-stack distributed ecosystem for automotive performance parts and custom tuning. Engineered a multi-vendor order-splitting engine with ACID-compliant transactions and Year-Make-Model fitment filtering. Features specialized portals for enthusiasts, vendors, and installers, integrated with Shiprocket logistics, Razorpay, and automated PDF invoicing via Puppeteer.",
     image: "/project/ard.png",
-    type: "Full Stack / Marketplace",
+    type: "UI/UX Design",
     category: "Web",
-    tech: [
-      "Node.js",
-      "TypeScript",
-      "React.js",
-      "MongoDB",
-      "Mongoose",
-      "Razorpay",
-      "Shiprocket",
-      "AWS S3",
-      "Puppeteer",
-      "Brevo",
-    ],
+    tech: ["Figma"],
     link: "#",
   },
   {
@@ -106,11 +76,38 @@ const projects = [
     link: "https://socialnotch.spaces-india.in/",
   },
   {
-    title:"Nourish",
+    title:"Naurished Kid Meal",
     description:"An AI-powered personalized nutrition and wellness app that provides food recommendations, meal plans, wellness tracking, and health insights based on your lifestyle and habits.",
     image:"/project/Naurish_thumbnail.png",
     type:"UI/UX Design",
-    category:"Web,App",
+    category:"App",
+    tech:["Figma","Adobe photoshop"],
+    link:"#",
+  },
+  {
+    title:"Quiezfier",
+    description:"",
+    image:"/project/Quiezfier.png",
+    type:"UI/UX Design",
+    category:"App",
+    tech:["Figma","Adobe photoshop"],
+    link:"#",
+  },
+  {
+    title:"Wee See Shop",
+    description:"",
+    image:"/project/WeeSeeShop_thumbnail.png",
+    type:"UI/UX Design",
+    category:"App",
+    tech:["Figma","Adobe photoshop"],
+    link:"#",
+  },
+  {
+    title:"Chill Delish",
+    description:"",
+    image:"/project/Chilldeli.png",
+    type:"UI/UX Design",
+    category:"App",
     tech:["Figma","Adobe photoshop"],
     link:"#",
   }
@@ -134,7 +131,7 @@ const Projects = () => {
             PORTFOLIO
           </h1>
           <h2 className="relative text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight z-10 text-[#007ABC]">
-            /SELECTED WORK
+            /Selected Work
           </h2>
         </div>
 

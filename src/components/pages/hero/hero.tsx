@@ -132,6 +132,16 @@ const Hero = () => {
           <span>WEB FLOW</span>
           <span>✦</span>
           <span>BRANDING</span>
+          <span>✦</span>
+          <span>WEB DESIGN</span>
+          <span>✦</span>
+          <span>APP DESIGN</span>
+          <span>✦</span>
+          <span>DEVELOPMENT</span>
+          <span>✦</span>
+          <span>WEB FLOW</span>
+          <span>✦</span>
+          <span>BRANDING</span>
         </div>
       </div>
       

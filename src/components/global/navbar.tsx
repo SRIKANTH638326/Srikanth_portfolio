@@ -86,8 +86,8 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Srikanth_Resume_Improved(1).pdf";
-    link.setAttribute("download", "Srikanth_Resume_Improved(1).pdf");
+    link.href = "/SrikanthCV.pdf";
+    link.setAttribute("download", "SrikanthCV.pdf");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -156,7 +156,7 @@ const Navbar = () => {
               <button
                 ref={ctaRef}
                 onClick={handleDownload}
-                className="hidden md:flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium bg-gray-900 text-white hover:bg-gray-800 border border-gray-300/20 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+                className="hidden md:flex items-center space-x-2 px-4 py-2 rounded-full text-sm font-medium bg-[#007ABC] text-white hover:bg-gray-800 border border-gray-300/20 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
               >
                 <Download size={16} />
                 <span className="cursor-pointer">Resume</span>

@@ -47,8 +47,8 @@ const Services = () => {
             There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.
           </div>
           <div className="mb-2 lg:mb-4">
-            <button className="bg-black text-white px-10 py-4 rounded-full text-[11px] font-bold tracking-[0.2em] hover:bg-gray-800 transition-colors shadow-lg">
-              ALL SERVICE
+            <button className="bg-[#007ABC] text-white px-10 py-4 rounded-full text-[12px] font-bold tracking-[0] hover:bg-gray-800 transition-colors shadow-lg">
+              View All Services
             </button>
           </div>
         </div>
@@ -58,8 +58,8 @@ const Services = () => {
           
           {/* Scroll Down Indicator */}
           <div className="hidden xl:flex flex-col items-center justify-start h-[350px] w-24 pt-8">
-            <div className="transform -rotate-90 text-[12px] font-bold tracking-[0.25em] text-gray-500 whitespace-nowrap mb-20 mt-12">
-              SCROLL DOWN
+            <div className="transform -rotate-90 text-[14px] font-bold tracking-[0] text-gray-500 whitespace-nowrap mb-20 mt-12">
+              Scroll Down
             </div>
             <div className="w-[1px] h-16 bg-gray-300 mb-8"></div>
             <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center text-white text-lg hover:scale-110 transition-transform cursor-pointer shadow-md">
@@ -83,7 +83,7 @@ const Services = () => {
               <div>
                 <h3 className="text-2xl sm:text-[28px] font-bold mb-10 leading-tight w-full sm:w-[80%] tracking-tight">UI-UX CREATIVE DESIGN</h3>
                 <a href="#" className="text-[12px] font-bold tracking-[0] flex items-center gap-3 text-gray-300 group-hover:text-white transition-colors">
-                  READ MORE <span className="text-lg leading-none transform group-hover:translate-x-1 transition-transform">→</span>
+                  Read More <span className="text-lg leading-none transform group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               </div>
             </div>
@@ -101,13 +101,13 @@ const Services = () => {
               <div>
                 <h3 className="text-2xl sm:text-[28px] font-bold mb-10 leading-tight w-full sm:w-[80%] tracking-tight group-hover:text-[#007ABC] transition-colors">VISUAL GRAPHIC DESIGN</h3>
                 <a href="#" className="text-[12px] font-bold tracking-[0] flex items-center gap-3 text-gray-500 group-hover:text-[#007ABC] transition-colors">
-                  READ MORE <span className="text-leading-none transform group-hover:translate-x-1 transition-transform">→</span>
+                  Read More <span className="text-leading-none transform group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               </div>
             </div>
 
             {/* Card 3: Light */}
-            <div className="bg-white text-black p-10 sm:p-12 flex flex-col justify-between min-h-[380px] rounded-3xl border border-gray-200 group hover:border-black transition-all cursor-pointer">
+            <div className="bg-white text-black p-10 sm:p-12 flex flex-col justify-between min-h-[380px] rounded-3xl border border-gray-200 group hover:border-[#007ABC] transition-all cursor-pointer">
               <div className="mb-12">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#007ABC]">
                   <circle cx="12" cy="5" r="2"/>
@@ -124,7 +124,7 @@ const Services = () => {
               <div>
                 <h3 className="text-2xl sm:text-[28px] font-bold mb-10 leading-tight w-full sm:w-[90%] tracking-tight group-hover:text-[#007ABC] transition-colors">STRATEGY & DIGITAL MARKETING</h3>
                 <a href="#" className="text-[12px] font-bold tracking-[0] flex items-center gap-3 text-gray-500 group-hover:text-[#007ABC] transition-colors">
-                  READ MORE <span className="text-lg leading-none transform group-hover:translate-x-1 transition-transform">→</span>
+                  Read More <span className="text-lg leading-none transform group-hover:translate-x-1 transition-transform">→</span>
                 </a>
               </div>
             </div>

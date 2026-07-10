@@ -21,7 +21,7 @@ const Footer = () => {
           {/* Left: Logo & Text */}
           <div className="max-w-md">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)]">
+              <div className="w-8 h-8 rounded-full bg-[#007ABC] flex items-center justify-center shadow-[0_0_15px_rgba(37,99,235,0.4)]">
                 <span className="text-white font-bold text-lg leading-none">S</span>
               </div>
               <span className="text-white text-xl font-bold tracking-tight">

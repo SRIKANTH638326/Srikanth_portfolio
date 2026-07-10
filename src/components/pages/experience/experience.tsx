@@ -100,13 +100,13 @@ const Experience = () => {
                     
                     <div className="flex gap-4 w-full md:w-1/2">
                       <div className="relative w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-100">
-                        <Image src="/project/bechdu.png" alt="Experience 1" fill className="object-cover" />
+                        <Image src="/project/Naurish_thumbnail.png" alt="Experience 1" fill className="object-cover" />
                       </div>
                       <div className="relative w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-100">
-                        <Image src="/experience_workspace.png" alt="Experience 2" fill className="object-cover" />
+                        <Image src="/project/Quiezfier.png" alt="Experience 2" fill className="object-cover" />
                       </div>
                       <div className="relative w-1/3 aspect-square rounded-2xl overflow-hidden bg-gray-100">
-                        <Image src="/project/sellsmart.png" alt="Experience 3" fill className="object-cover" />
+                        <Image src="/project/WeeSeeShop_thumbnail.png" alt="Experience 3" fill className="object-cover" />
                       </div>
                     </div>
 
