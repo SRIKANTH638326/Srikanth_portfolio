@@ -50,7 +50,7 @@ const Projects = () => {
         </div>
 
         {/* Project Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {filteredProjects.map((project) => (
             <Link
               key={project.slug}
@@ -59,12 +59,12 @@ const Projects = () => {
             >
 
               {/* Image Container */}
-              <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-4 bg-[#F8F8F8] border border-gray-100">
+              <div className="relative w-full aspect-[3/2] rounded-xl overflow-hidden mb-2 bg-[#F8F8F8] border border-gray-100">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-400 ease-out"
                 />
 
                 {/* Hover Arrow Button */}

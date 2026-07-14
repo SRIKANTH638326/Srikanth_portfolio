@@ -16,7 +16,13 @@ import Footer from "@/components/global/footer";
 import SplashLoader from "@/components/global/loader";
 
 export default function Page() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    // Skip loader if user already visited in this session (e.g. returning from case study)
+    if (typeof window !== "undefined" && sessionStorage.getItem("portfolio_visited")) {
+      return false;
+    }
+    return true;
+  });
 
   // Use useEffect to prevent scroll during loading
   useEffect(() => {
@@ -24,6 +30,8 @@ export default function Page() {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
+      // Mark as visited so loader won't show when navigating back
+      sessionStorage.setItem("portfolio_visited", "true");
     }
   }, [loading]);
 

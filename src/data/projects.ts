@@ -24,10 +24,10 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "bechdu-buy-and-sell",
-    title: "Bechdu Buy & Sell",
+    title: "Bechdu – Buy & Sell Used Electronics Platform",
     description:
       "A comprehensive electronics marketplace with multi-vendor support. Features a React admin dashboard and a Flutter QC mobile app for partners. Engineered with automated PDF invoice generation and receipt management for both buying and selling sides, AWS S3 for secure KYC/QC storage, and real-time Firebase tracking with automated data synchronization.",
-    image: "/project/Bechdu_thumbnail.png",
+    image: "/project/Bechdu_add.png",
     type: "UI/UX Design",
     category: "Web",
     tech: ["Figma", "Adobe Photoshop"],
@@ -35,96 +35,95 @@ export const projects: Project[] = [
     clientOverview:
       "Bechdu is a rapidly growing electronics marketplace aiming to simplify the process of buying and selling pre-owned devices. The platform needed a seamless, trust-building user experience for both buyers and sellers across web and mobile platforms.",
     challenge:
-      "Design an intuitive multi-vendor marketplace experience that handles complex workflows — from product listing and quality checks to secure payments and real-time tracking — while maintaining user trust and engagement.",
+      "The existing experience presented several usability and business challenges. Users found it difficult to understand the selling process, compare device values, and build confidence in the platform's pricing and verification system. The interface lacked a clear information hierarchy, resulting in longer decision times and reduced user engagement. Additionally, the buying journey did not effectively showcase refurbished products, warranty information, or trust indicators, leading to missed conversion opportunities.",
     solution: [
-      "Designed a comprehensive UI/UX system for the marketplace with dedicated flows for buyers, sellers, and admin users.",
-      "Created a streamlined product listing flow with smart categorization, dynamic pricing suggestions, and instant quality assessment indicators.",
-      "Engineered the visual design for automated PDF invoice generation and receipt management visible to both buying and selling sides.",
-      "Designed the real-time tracking interface with Firebase-powered status updates and automated notifications.",
+      "The redesign focused on creating a user-centered experience that balances simplicity, transparency, and business goals. A clean visual system with consistent typography, spacing, and reusable UI components was introduced to improve usability across web and mobile platforms.",
+      "The selling journey was redesigned into a guided step-by-step flow, allowing users to easily select their device, complete condition assessments, receive an instant valuation, schedule doorstep pickup, and track the transaction. Trust-building elements such as warranty badges, secure payment messaging, customer reviews, and transparent pricing explanations were strategically incorporated throughout the experience.",
+      "For the buying experience, product discovery was enhanced with powerful search, smart filters, detailed product pages, comparison options, and clear specifications. The checkout process was streamlined to minimize friction while maintaining confidence through visible support and payment information.",
+      "The QC Partner App streamlined quality checks with a guided checklist workflow, real-time status tracking, and OTP-authenticated logins. Secure document upload flows with clear progress indicators and verification feedback enhanced operational efficiency and user confidence.",
     ],
     results: [
       { value: "40%", label: "Increase in user engagement after redesign" },
       { value: "3x", label: "Faster product listing process with new UX flow" },
     ],
     keyTakeaway:
-      "A well-structured visual hierarchy and simplified multi-step workflows can dramatically improve marketplace adoption and user trust in peer-to-peer transactions.",
+      "User trust is the foundation of successful recommerce platforms, balancing business goals with user needs results in higher engagement and stronger conversion potential. Sustainable digital products benefit from experiences that make buying and selling electronics simple, transparent, and reliable.",
     galleryImages: ["/project/Bechdu_thumbnail.png"],
   },
   {
     slug: "sellsmart-sell",
-    title: "SellSmart Sell",
+    title: "SellSmart - The Smarter Way to Sell Your Phone",
     description:
-      "Platform to sell electronics featuring a React admin dashboard and a Flutter QC mobile app for partners. Manages end-to-end lifecycles with smart routing, dynamic rewards, and passwordless MSG91 OTP authentication. Engineered with AWS S3 for secure KYC document storage, automated data synchronization, and on-the-fly PDF invoice generation.",
-    image: "/project/SellSmart_thumbnail.png",
+      "SellSmart simplifies the process of selling used smartphones through a fast, transparent, and reliable experience. The platform guides users from device selection and valuation to pickup and payment, ensuring every interaction is simple, secure, and trustworthy.",
+    image: "/project/Sellsmart_thumbnail.png",
     type: "UI/UX Design",
     category: "Web",
     tech: ["Figma", "Adobe Photoshop", "Adobe Xd"],
     link: "https://sellsmart.co.in/",
     clientOverview:
-      "SellSmart is a next-generation platform dedicated to making selling pre-owned electronics effortless. The client needed a design system that could handle complex backend workflows while presenting a simple, guided experience to end users.",
+      "SellSmart is a digital recommerce platform that helps users sell their used smartphones and electronic devices quickly and securely. The platform offers instant device valuation, doorstep pickup, real-time price estimation, and fast payments while providing customers with access to certified refurbished devices. Its goal is to simplify the resale process and make upgrading technology more convenient and transparent.",
     challenge:
-      "Create a frictionless selling experience that guides users through device evaluation, pickup scheduling, and payment — while integrating partner-side quality control and admin management dashboards.",
+      "The existing platform lacked a structured user journey, making it difficult for users to understand the selling process from valuation to payment. Important trust indicators such as pricing transparency, quality checks, and secure transactions were not clearly communicated. The buying experience also suffered from poor product organization, limited filtering options, and an outdated interface, resulting in reduced user engagement and lower conversion opportunities.",
     solution: [
-      "Designed an end-to-end selling journey with smart device evaluation forms, dynamic pricing displays, and instant offer generation screens.",
-      "Created a dedicated Partner QC mobile app interface with OTP-authenticated login flows and streamlined inspection checklists.",
-      "Developed the admin dashboard UI with order lifecycle management, smart routing visualizations, and dynamic rewards tracking.",
-      "Designed secure KYC document upload flows with progress indicators and verification status displays.",
+      "The design introduced a clean, step-by-step selling process that guides users through device selection, condition assessment, and instant valuation with clear progress indicators and visual feedback.",
+      "Important trust elements such as warranty information, secure payment details, customer reviews, and transparent pricing explanations were integrated throughout the experience to build user confidence.",
+      "The buying interface was enhanced with improved product organization, advanced search, powerful filtering, detailed specification layouts, and comparison tools to streamline device discovery.",
+      "A dedicated Partner QC mobile app was designed with an OTP-authenticated login, streamlined inspection checklists, and secure document upload workflows to improve operational efficiency.",
     ],
     results: [
-      { value: "55%", label: "Reduction in user drop-off during selling flow" },
-      { value: "2x", label: "Faster QC processing with new partner app design" },
+      { value: "55%", label: "Increase in completed sales" },
+      { value: "70%", label: "Increase in user engagement on selling page" },
     ],
     keyTakeaway:
-      "Passwordless authentication and progressive disclosure of complexity keep users engaged through multi-step processes without overwhelming them.",
+      "Building trust through transparency and ease-of-use is key for high-value transactions. A seamless, step-by-step process keeps users engaged while highlighting security and reliability at every touchpoint.",
     galleryImages: ["/project/SellSmart_thumbnail.png"],
   },
   {
     slug: "smartedlab",
-    title: "SmartEdLab",
+    title: "Designing an AI-Powered Language Learning Platform",
     description:
-      "Architected a robust REST API backend managing complex dual-sided marketplace operations. Engineered end-to-end order lifecycles with dynamic state transitions, real-time technician tracking, and Role-Based Access Control. Features a specialized Partner Management module with OTP-authenticated QC logins, system-wide 'Partner ID' tracking, and secure document pipelines for automated PDF processing.",
+      "SmartEdLab is an AI-driven language learning platform that helps students improve their Listening, Speaking, Reading, and Writing (LSRW) skills through self-paced courses, AI-powered tutoring, live classes, and interactive assessments. The platform also enables educational institutions to deliver branded language learning experiences through a white-label solution, allowing them to manage students, instructors, content, and subscriptions from a centralized dashboard.",
     image: "/project/Smartedlab_thumbnail.png",
     type: "UI/UX Design",
     category: "Web",
     tech: ["Figma", "Next.js", "Node.js", "Express.js", "TypeScript", "MongoDB", "Mongoose", "MSG91", "Multer", "REST API"],
     link: "https://smartedlab-ui.vercel.app/",
     clientOverview:
-      "SmartEdLab is an innovative EdTech platform providing interactive learning experiences. The project demanded both a polished frontend design and a scalable backend architecture to support growing user bases and complex content delivery.",
+      "SmartEdLab was developed for an educational technology client looking to modernize language education with AI and scalable digital infrastructure. The goal was to create a single platform that serves individual learners while also enabling schools, colleges, training institutes, and corporate organizations to launch their own branded language learning ecosystem.",
     challenge:
-      "Design and architect a dual-sided marketplace platform that seamlessly integrates content creation, delivery, and management with real-time collaboration and role-based access for students, instructors, and administrators.",
+      "Design and architect a comprehensive EdTech platform supporting three distinct user groups: individual learners, independent instructors, and institutional administrators. The system required seamless content delivery, progress tracking, subscription management, and secure payments across all user types.",
     solution: [
-      "Designed intuitive user interfaces for both student-facing learning modules and instructor content management systems.",
-      "Created visual flows for real-time technician/instructor tracking with dynamic state transitions and status indicators.",
-      "Developed the Partner Management module UI with secure OTP-authenticated login and system-wide tracking dashboards.",
+      "Implemented a unified design system with role-based interfaces for Students (LSRW learning), Instructors (content creation & management), and Partner Admins (enterprise management & white-label customization).",
+      "Designed responsive learning modules with interactive exercises, audio-visual content integration, AI-powered voice analysis for pronunciation feedback, and progress tracking dashboards.",
       "Architected the visual design for automated PDF processing pipelines with progress tracking and document preview capabilities.",
     ],
     results: [
-      { value: "60%", label: "Improvement in content delivery efficiency" },
+      { value: "10", label: "User Roles" },
       { value: "4.8★", label: "Average user satisfaction rating post-launch" },
     ],
     keyTakeaway:
-      "Combining clean UI design with robust backend architecture ensures a seamless experience that can scale while maintaining performance and user satisfaction.",
+      "A well-designed platform can successfully serve multiple user groups with distinct needs. By prioritizing clear navigation, role-specific features, and consistent user experience, educational platforms can enhance learning outcomes and operational efficiency.",
     galleryImages: ["/project/Smartedlab_thumbnail.png"],
   },
   {
     slug: "the-duts",
-    title: "The Duts",
+    title: "The Dutz – Healthy Snacking E-Commerce Experience",
     description:
-      "Architected a scalable headless CMS and RESTful API backend for a dynamic EdTech platform. Designed optimized Mongoose schemas managing deeply nested arrays (Courses, Blogs). Engineered a robust concurrent multi-file upload system using Multer to parse complex multi-part form data (images, PDFs) safely into AWS S3. Built secure JWT routing workflows and integrated the Brevo API for transactional notifications.",
+      "The Dutz is an e-commerce platform that offers a wide range of healthy snacks and food products. The platform is designed to provide users with a seamless and enjoyable shopping experience, with a focus on clean UI, easy navigation, and personalized recommendations.",
     image: "/project/The Dutz_thumbnail.png",
-    type: "Backend / API",
+    type: "UI/UX Design",
     category: "Web",
     tech: ["Figma"],
     link: "https://thedutz.com/",
-    clientOverview:
-      "The Duts is an EdTech platform focused on delivering high-quality courses and content. The platform needed a visually engaging and intuitive design that could handle rich media content while maintaining fast load times and seamless navigation.",
+    clientOverview: 
+      "The Dutz is an EdTech platform focused on delivering high-quality courses and content. The platform needed a visually engaging and intuitive design that could handle rich media content while maintaining fast load times and seamless navigation.",
     challenge:
-      "Design a content-rich EdTech platform that elegantly presents courses, blogs, and multimedia content while ensuring accessibility, fast loading, and an engaging user experience across all devices.",
+      "The Dutz e-commerce platform required a modern, intuitive interface that could effectively showcase its range of healthy snacks. The design needed to balance rich product visuals with simple navigation, seamless multi-step purchasing, and elements that build trust for first-time buyers.",
     solution: [
-      "Designed the course catalog and detail page layouts with rich media integration, progressive loading indicators, and smart content hierarchy.",
-      "Created the blog management interface with nested content structures, inline media editors, and SEO-optimized preview modes.",
-      "Developed the multi-file upload UI with drag-and-drop zones, concurrent upload progress bars, and thumbnail previews.",
-      "Designed transactional notification templates and user journey emails for the Brevo API integration.",
+      "Designed a refreshed brand identity with a clean, modern logo, vibrant color palette, and premium typography that reflects the brand’s focus on health and quality.",
+      "Created an intuitive e-commerce layout with prominent product displays, high-quality imagery, easy filtering options, and clear calls-to-action.",
+      "Developed a simplified multi-step checkout flow with clear progress indicators, guest checkout option, and transparent pricing to reduce friction and build trust.",
+      "Designed engaging product detail pages showcasing nutritional information, usage benefits, customer testimonials, and trust signals like ingredient transparency and quality certifications.",
     ],
     results: [
       { value: "35%", label: "Increase in course completion rates" },

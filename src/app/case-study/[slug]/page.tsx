@@ -74,6 +74,11 @@ export default function CaseStudyPage() {
             sans-serif;
           background: #FCFBF9;
           color: #1a1a1a;
+          scroll-behavior: smooth;
+        }
+
+        html {
+          scroll-behavior: smooth;
         }
 
         /* --- Sticky Back Nav --- */
@@ -90,7 +95,7 @@ export default function CaseStudyPage() {
           background: rgba(252, 251, 249, 0.92);
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
-          border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 6px rgba(0, 0, 0, 0.04);
           transition: all 0.3s ease;
         }
 
@@ -100,8 +105,7 @@ export default function CaseStudyPage() {
           gap: 8px;
           padding: 8px 20px;
           border-radius: 100px;
-          border: 1px solid rgba(0, 0, 0, 0.12);
-          background: rgba(255, 255, 255, 0.7);
+          border: none;
           color: #1a1a1a;
           font-size: 14px;
           font-weight: 500;
@@ -112,7 +116,6 @@ export default function CaseStudyPage() {
 
         .cs-back-btn:hover {
           background: #fff;
-          border-color: rgba(0, 0, 0, 0.2);
           transform: translateX(-2px);
         }
 
@@ -122,7 +125,7 @@ export default function CaseStudyPage() {
           gap: 6px;
           padding: 8px 20px;
           border-radius: 100px;
-          background: #2d4a3e;
+          background: #007ABC;
           color: #fff;
           font-size: 14px;
           font-weight: 500;
@@ -132,7 +135,7 @@ export default function CaseStudyPage() {
         }
 
         .cs-live-btn:hover {
-          background: #1e3329;
+          background: #000000ff;
           transform: translateY(-1px);
           box-shadow: 0 4px 12px rgba(45, 74, 62, 0.3);
         }
@@ -242,7 +245,7 @@ export default function CaseStudyPage() {
           position: relative;
           border-radius: 20px;
           overflow: hidden;
-          aspect-ratio: 3 / 4;
+          aspect-ratio: 4 /3.5;
           box-shadow: 0 12px 48px rgba(0, 0, 0, 0.1);
         }
 
@@ -415,49 +418,89 @@ export default function CaseStudyPage() {
           margin-bottom: 48px;
         }
 
-        /* --- Next Project CTA --- */
-        .cs-next-project {
+        /* --- Suggested Projects Section --- */
+        .cs-suggested-section {
           max-width: 1280px;
           margin: 0 auto;
           padding: 60px 40px 100px;
-          text-align: center;
         }
 
-        .cs-next-label {
+        .cs-suggested-label {
           font-size: 13px;
           font-weight: 600;
           letter-spacing: 1.5px;
           text-transform: uppercase;
           color: #999;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
+          text-align: center;
         }
 
-        .cs-next-title {
-          font-size: clamp(24px, 3vw, 36px);
+        .cs-suggested-heading {
+          font-size: clamp(24px, 3vw, 32px);
           font-weight: 700;
           color: #1a1a1a;
-          margin-bottom: 28px;
+          margin-bottom: 40px;
           letter-spacing: -0.02em;
+          text-align: center;
         }
 
-        .cs-next-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          padding: 12px 32px;
-          border-radius: 100px;
-          background: #2d4a3e;
-          color: #fff;
-          font-size: 14px;
-          font-weight: 600;
+        .cs-suggested-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 24px;
+        }
+
+        .cs-suggested-card {
+          display: block;
           text-decoration: none;
-          transition: all 0.3s ease;
+          border-radius: 16px;
+          overflow: hidden;
+          background: #fff;
+          border: 1px solid rgba(0, 0, 0, 0.06);
+          transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          cursor: pointer;
         }
 
-        .cs-next-link:hover {
-          background: #1e3329;
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(45, 74, 62, 0.3);
+        .cs-suggested-card:hover {
+          transform: translateY(-6px);
+          box-shadow: 0 16px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cs-suggested-card:hover .cs-suggested-img img {
+          transform: scale(1.05);
+        }
+
+        .cs-suggested-img {
+          position: relative;
+          width: 100%;
+          aspect-ratio: 16 / 10;
+          overflow: hidden;
+          background: #f0ede8;
+        }
+
+        .cs-suggested-img img {
+          transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cs-suggested-info {
+          padding: 20px;
+        }
+
+        .cs-suggested-category {
+          font-size: 11px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          color: #2d4a3e;
+          margin-bottom: 8px;
+        }
+
+        .cs-suggested-name {
+          font-size: 16px;
+          font-weight: 600;
+          color: #1a1a1a;
+          letter-spacing: -0.01em;
+          line-height: 1.3;
         }
 
         /* --- Divider --- */
@@ -493,7 +536,13 @@ export default function CaseStudyPage() {
             order: -1; /* show image first on mobile */
           }
           .cs-gallery-image-wrapper {
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 4 / 3.5;
+          }
+          .cs-suggested-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .cs-suggested-section {
+            padding: 60px 24px 80px;
           }
           .cs-back-nav {
             padding: 12px 20px;
@@ -510,6 +559,12 @@ export default function CaseStudyPage() {
           .cs-results-grid {
             grid-template-columns: 1fr;
           }
+          .cs-suggested-grid {
+            grid-template-columns: 1fr;
+          }
+          .cs-suggested-section {
+            padding: 40px 16px 60px;
+          }
           .cs-back-nav {
             padding: 10px 16px;
           }
@@ -524,7 +579,7 @@ export default function CaseStudyPage() {
         <nav className="cs-back-nav">
           <Link href="/#projects" className="cs-back-btn">
             <ArrowLeft size={16} />
-            Back to Portfolio
+            Back
           </Link>
           {project.link && project.link !== "#" && (
             <a
@@ -633,26 +688,42 @@ export default function CaseStudyPage() {
           <div className="cs-divider-line" />
         </div>
 
-        {/* Next Project */}
+        {/* Suggested Projects */}
         {(() => {
-          const currentIndex = projects.findIndex(
-            (p) => p.slug === project.slug
+          const otherProjects = projects.filter(
+            (p) => p.slug !== project.slug
           );
-          const nextProject =
-            projects[(currentIndex + 1) % projects.length];
+          // Pick up to 3 suggested projects
+          const suggested = otherProjects.slice(0, 4);
           return (
-            <div className="cs-next-project">
-              <p className="cs-next-label">Next Project</p>
-              <h3 className="cs-next-title">
-                {nextProject.title.split("–")[0].trim()}
-              </h3>
-              <Link
-                href={`/case-study/${nextProject.slug}`}
-                className="cs-next-link"
-              >
-                View Case Study
-                <ExternalLink size={14} />
-              </Link>
+            <div className="cs-suggested-section">
+              <p className="cs-suggested-label">More Projects</p>
+              <h3 className="cs-suggested-heading">Explore Other Work</h3>
+              <div className="cs-suggested-grid">
+                {suggested.map((sp) => (
+                  <Link
+                    key={sp.slug}
+                    href={`/case-study/${sp.slug}`}
+                    className="cs-suggested-card"
+                  >
+                    <div className="cs-suggested-img">
+                      <Image
+                        src={sp.image}
+                        alt={sp.title}
+                        fill
+                        className="object-cover object-top"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="cs-suggested-info">
+                      <p className="cs-suggested-category">{sp.type}</p>
+                      <h4 className="cs-suggested-name">
+                        {sp.title.split("–")[0].trim()}
+                      </h4>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </div>
           );
         })()}
