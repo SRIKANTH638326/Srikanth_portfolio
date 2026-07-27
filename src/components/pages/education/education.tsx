@@ -26,10 +26,10 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="bg-[#FCFBF9] py-16 sm:py-20 lg:py-24 relative overflow-hidden">
+    <section id="education" className="bg-[#FCFBF9] text-gray-900 py-16 sm:py-20 lg:py-24 relative overflow-hidden font-sans">
       <div className="max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-16">
         {/* Content */}
-        <div className="space-y-12">
+        <div className="space-y-16">
           <div className="text-left">
             <motion.h2
               className="text-4xl sm:text-5xl lg:text-[64px] font-bold tracking-tight text-black leading-[1.1] mb-6"
@@ -51,26 +51,22 @@ const Education = () => {
             </motion.p>
           </div>
 
-          {/* Grid Layout */}
+          {/* List Layout */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-6 lg:gap-8 justify-start"
+            className="flex flex-col w-full"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
             {educationData.map((edu, idx) => (
-              <div key={idx} className="flex flex-col bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                <h4 className="font-bold text-gray-900 mb-4 uppercase tracking-wider text-sm border-b border-gray-200 pb-2">
-                  {idx === 0 ? "Undergraduate" : "High School"}
-                </h4>
-                <div className="space-y-2 pt-2">
-                  <h5 className="font-semibold text-gray-800 text-base leading-tight">{edu.title}</h5>
-                  <p className="text-gray-500 text-sm font-medium">{edu.institution}</p>
-                  <div className="flex flex-col space-y-1 mt-3">
-                    <p className="text-gray-400 text-xs">{edu.duration}</p>
-                    <p className="text-[#946E1C] text-sm font-medium">{edu.score}</p>
-                  </div>
+              <div key={idx} className="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-200 py-8">
+                <div className="flex flex-col mb-2 md:mb-0">
+                  <h3 className="text-xl sm:text-2xl font-medium text-black mb-2">{edu.institution}</h3>
+                  <p className="text-gray-500 font-medium text-lg">{edu.title}</p>
+                </div>
+                <div className="text-gray-500 font-medium text-lg">
+                  {edu.duration}
                 </div>
               </div>
             ))}

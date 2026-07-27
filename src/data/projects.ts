@@ -6,6 +6,7 @@ export interface ProjectResult {
 export interface Project {
   slug: string;
   title: string;
+  subTitle?: string;
   description: string;
   image: string;
   type: string;
@@ -24,7 +25,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "bechdu-buy-and-sell",
-    title: "Bechdu – Buy & Sell Used Electronics Platform",
+    title: "Bechdu",
+    subTitle:"Bechdu – Buy & Sell Used Electronics",
     description:
       "A comprehensive electronics marketplace with multi-vendor support. Features a React admin dashboard and a Flutter QC mobile app for partners. Engineered with automated PDF invoice generation and receipt management for both buying and selling sides, AWS S3 for secure KYC/QC storage, and real-time Firebase tracking with automated data synchronization.",
     image: "/project/Bechdu_add.png",
@@ -51,11 +53,12 @@ export const projects: Project[] = [
     galleryImages: ["/project/Bechdu_thumbnail.png"],
   },
   {
-    slug: "sellsmart-sell",
-    title: "SellSmart - The Smarter Way to Sell Your Phone",
+    slug: "sellsmart-buy",
+    title: "SellSmart",
+    subTitle:"SellSmart - The Smarter Way to Sell Your Phone Buy & Sell Used Electronics",
     description:
       "SellSmart simplifies the process of selling used smartphones through a fast, transparent, and reliable experience. The platform guides users from device selection and valuation to pickup and payment, ensuring every interaction is simple, secure, and trustworthy.",
-    image: "/project/Sellsmart_thumbnail.png",
+    image: "/project/SellSmart_thumbnail.png",
     type: "UI/UX Design",
     category: "Web",
     tech: ["Figma", "Adobe Photoshop", "Adobe Xd"],
@@ -80,13 +83,14 @@ export const projects: Project[] = [
   },
   {
     slug: "smartedlab",
-    title: "Designing an AI-Powered Language Learning Platform",
+    title: "SmartEdLab",
+    subTitle:"AI-Powered Language Learning Platform",
     description:
       "SmartEdLab is an AI-driven language learning platform that helps students improve their Listening, Speaking, Reading, and Writing (LSRW) skills through self-paced courses, AI-powered tutoring, live classes, and interactive assessments. The platform also enables educational institutions to deliver branded language learning experiences through a white-label solution, allowing them to manage students, instructors, content, and subscriptions from a centralized dashboard.",
     image: "/project/Smartedlab_thumbnail.png",
     type: "UI/UX Design",
     category: "Web",
-    tech: ["Figma", "Next.js", "Node.js", "Express.js", "TypeScript", "MongoDB", "Mongoose", "MSG91", "Multer", "REST API"],
+    tech: ["Figma", "Adobe Photoshop", "Adobe XD"],
     link: "https://smartedlab-ui.vercel.app/",
     clientOverview:
       "SmartEdLab was developed for an educational technology client looking to modernize language education with AI and scalable digital infrastructure. The goal was to create a single platform that serves individual learners while also enabling schools, colleges, training institutes, and corporate organizations to launch their own branded language learning ecosystem.",
@@ -106,8 +110,9 @@ export const projects: Project[] = [
     galleryImages: ["/project/Smartedlab_thumbnail.png"],
   },
   {
-    slug: "the-duts",
-    title: "The Dutz – Healthy Snacking E-Commerce Experience",
+    slug: "thedutz",
+    title: "The Dutz",
+    subTitle:"Healthy Snacking E-Commerce Experience",
     description:
       "The Dutz is an e-commerce platform that offers a wide range of healthy snacks and food products. The platform is designed to provide users with a seamless and enjoyable shopping experience, with a focus on clean UI, easy navigation, and personalized recommendations.",
     image: "/project/The Dutz_thumbnail.png",
@@ -135,35 +140,38 @@ export const projects: Project[] = [
   },
   {
     slug: "pitcs",
-    title: "Pitcs",
+    title: "PITCS",
+    subTitle:"Modern HR & Workforce Solutions Platform",
     description:
-      "Official website showcasing the diverse MGBW portfolio. Engineered a highly optimized, dynamic hero video builder serving device-specific assets via responsive media architecture. Solved strict Safari/iOS autoplay restrictions using resilient fallback strategies, event-driven silent retries, and automated listener cleanup pipelines for blazing-fast performance.",
+      "PITCS is a leading HR consulting and workforce solutions company that provides Executive Search, Professional Staffing, Recruitment Process Outsourcing (RPO), Payroll & Compliance, Global Capability Centre (GCC), Build-Operate-Transfer (BOT), and workforce augmentation services. Established in 2006, the company serves enterprises across multiple industries with scalable recruitment and HR solutions.",
     image: "/project/Pitcs_thumb.png",
     type: "UI/UX Design",
     category: "Web",
     tech: ["Figma"],
     link: "https://pitcs.in/",
     clientOverview:
-      "PITCS is a technology services company requiring a modern, professional web presence that showcases their diverse portfolio and capabilities. The site needed to make a strong first impression with dynamic visuals while maintaining blazing-fast performance.",
+      "PITCS is a global HR consulting and workforce solutions company that needed a modern, professional web presence. The company specializes in executive search, staffing, RPO, payroll, GCC, and workforce augmentation services across multiple industries.",
     challenge:
-      "Create a visually stunning corporate website that balances rich media content (hero videos, portfolio showcases) with performance optimization, especially on mobile devices with strict autoplay restrictions.",
+      "The company’s existing website lacked visual consistency and failed to communicate the full breadth of its services effectively. The interface felt outdated, making it difficult for potential clients to understand the value and scale of PITCS’s HR and workforce solutions. Additionally, the site needed to better highlight the company’s deep industry expertise and commitment to innovation.",
     solution: [
-      "Designed a dynamic hero section with responsive video architecture that adapts media quality based on device capabilities.",
-      "Created an elegant portfolio showcase layout with filterable project categories and immersive detail views.",
-      "Developed resilient fallback strategies for Safari/iOS autoplay restrictions with smooth image-to-video transitions.",
-      "Designed performance-optimized asset loading with skeleton screens and progressive enhancement patterns.",
+      "Implemented a clean, modern design system with a professional color palette and consistent typography that reflects PITCS’s industry leadership.",
+      "Redesigned the homepage to feature a dynamic hero section that immediately communicates the company’s value proposition and diverse service offerings.",
+      "Created clear, intuitive navigation that allows users to easily explore each service vertical, including Executive Search, Staffing, RPO, Payroll & Compliance, GCC, and Build-Operate-Transfer (BOT).",
+      "Developed detailed service pages with service-specific information, industry applications, and clear calls-to-action to guide potential clients through the conversion funnel.",
+      "Designed case study layouts that highlight the company’s success across different industries, demonstrating expertise and building trust.",
     ],
     results: [
-      { value: "95+", label: "Google Lighthouse performance score" },
-      { value: "2.1s", label: "Average page load time across all devices" },
+      { value: "10", label: "User Roles" },
+      { value: "4.8★", label: "Average user satisfaction rating post-launch" },
     ],
     keyTakeaway:
-      "Device-aware responsive media strategies combined with graceful fallbacks ensure a premium visual experience without sacrificing performance on any platform.",
+      "A modern, intuitive interface can successfully communicate complex service offerings while maintaining blazing-fast performance.",
     galleryImages: ["/project/Pitcs_thumb.png"],
   },
   {
     slug: "ard-performance",
-    title: "ARD PERFORMANCE – High-Performance Automotive Ecosystem",
+    title: "ARD PERFORMANCE",
+    subTitle:"High-Performance Automotive Ecosystem",
     description:
       "A full-stack distributed ecosystem for automotive performance parts and custom tuning. Engineered a multi-vendor order-splitting engine with ACID-compliant transactions and Year-Make-Model fitment filtering. Features specialized portals for enthusiasts, vendors, and installers, integrated with Shiprocket logistics, Razorpay, and automated PDF invoicing via Puppeteer.",
     image: "/project/ard.png",
@@ -192,17 +200,18 @@ export const projects: Project[] = [
   {
     slug: "cosurj",
     title: "Cosurj",
+    subTitle:"Transforming Digital Presence Through a User-Centred Website Redesign",
     description:
-      "A comprehensive event marketplace managing workflows for users, vendors, and admins. Features a sophisticated backend with dynamic pricing logic, multi-level taxation, and secure Razorpay checkout integration with webhooks. Engineered an automated fulfillment pipeline utilizing Puppeteer and PDFKit for dynamic PDF ticket generation, alongside background Node Cron jobs and Brevo API email delivery.",
+      "The project focused on redesigning the client's digital platform to create a modern, responsive, and user-friendly experience. The primary objective was to improve usability, strengthen the brand identity, simplify navigation, and increase user engagement while ensuring the website aligned with current design standards and business objectives.",
     image: "/project/Cosurj_thumbnail.png",
     type: "UI/UX Design",
     category: "Web",
     tech: ["Figma"],
-    link: "https://socialnotch.spaces-india.in/",
+    link: "#",
     clientOverview:
       "Cosurj is an event discovery and ticketing marketplace connecting event organizers with attendees. The platform needed to handle complex pricing structures, multi-vendor coordination, and automated ticket fulfillment while providing a delightful booking experience.",
     challenge:
-      "Design an event marketplace that elegantly handles dynamic pricing, multi-level taxation displays, and a seamless checkout-to-ticket experience for users, while providing powerful management tools for vendors and administrators.",
+      "The client wanted to launch a new event discovery and ticketing platform to connect event organizers with attendees. The goal was to create a seamless, user-friendly experience for discovering events, purchasing tickets, and managing bookings. The platform needed to support multiple event organizers, handle various pricing structures, and provide a modern, visually engaging interface.",
     solution: [
       "Designed an immersive event discovery interface with smart filtering, visual category browsing, and location-based suggestions.",
       "Created dynamic pricing display components that transparently show base price, taxes, and fees with real-time total calculations.",
@@ -210,27 +219,28 @@ export const projects: Project[] = [
       "Designed automated PDF ticket templates with QR codes, event details, and branding customization options for organizers.",
     ],
     results: [
-      { value: "45%", label: "Higher checkout completion rate" },
-      { value: "98%", label: "Ticket delivery success rate within 30 seconds" },
+      { value: "35%", label: "Increase in user registration" },
+      { value: "95%", label: "Positive feedback on user experience" },
     ],
     keyTakeaway:
-      "Transparent pricing displays and instant fulfillment dramatically boost checkout confidence and reduce cart abandonment in marketplace platforms.",
+      "A clean, modern design system with a professional color palette and consistent typography can successfully communicate complex service offerings while maintaining blazing-fast performance.",
     galleryImages: ["/project/Cosurj_thumbnail.png"],
   },
   {
     slug: "nourished-kid-meal",
-    title: "Nourished Kid Meal",
+    title: "NOURISHED",
+    subTitle:"Smart Kids Meal Subscription & Delivery Platform",
     description:
-      "An AI-powered personalized nutrition and wellness app that provides food recommendations, meal plans, wellness tracking, and health insights based on your lifestyle and habits.",
+      "The Nourished Kid Meal app is a comprehensive wellness platform designed to support parents in making healthy dietary choices for their children. The app combines personalized nutrition planning, activity tracking, and health insights into a seamless, user-friendly interface.",
     image: "/project/Naurish_thumbnail.png",
     type: "UI/UX Design",
     category: "App",
     tech: ["Figma", "Adobe Photoshop"],
     link: "#",
     clientOverview:
-      "Nourished Kid Meal is an AI-driven nutrition app designed to help parents make informed dietary choices for their children. The app combines personalization, meal planning, and wellness tracking in a fun, approachable interface.",
+      "Nourished Kid Meal is a startup that needed a user-friendly, engaging mobile app to help parents make healthier food choices for their children. The app needed to provide personalized meal recommendations, track wellness progress, and offer fun, interactive features that would encourage children to eat nutritious food.",
     challenge:
-      "Design a mobile app that makes child nutrition feel approachable rather than clinical — combining AI-powered recommendations with playful, parent-friendly interfaces that encourage consistent healthy eating habits.",
+      "The primary challenge was to design an app that appealed to both parents and children. It needed to provide reliable, science-backed nutritional guidance for parents while offering a fun, engaging experience for kids. The interface had to be intuitive enough for daily use but also flexible enough to accommodate different dietary needs and preferences.",
     solution: [
       "Designed a warm, playful onboarding flow that captures child profiles, dietary preferences, and health goals through engaging questionnaires.",
       "Created AI-powered meal recommendation cards with nutritional breakdowns, ingredient lists, and one-tap meal plan additions.",
@@ -242,12 +252,13 @@ export const projects: Project[] = [
       { value: "4.9★", label: "App Store rating from parent users" },
     ],
     keyTakeaway:
-      "Combining AI personalization with playful, non-clinical design creates sustainable engagement in health and wellness applications for families.",
+      "A well-structured information architecture combined with intuitive, visually appealing design elements can make complex wellness data accessible and actionable for parents seeking to improve their children’s nutrition.",
     galleryImages: ["/project/Naurish_thumbnail.png"],
   },
   {
     slug: "quiezfier",
     title: "Quiezfier",
+    subTitle: "Interactive Quiz and Learning Platform",
     description:
       "An interactive quiz and learning platform designed to make education engaging through gamification, timed challenges, and personalized learning paths.",
     image: "/project/Quiezfier.png",
@@ -276,6 +287,7 @@ export const projects: Project[] = [
   {
     slug: "wee-see-shop",
     title: "Wee See Shop",
+    subTitle: "Social-First E-Commerce Platform",
     description:
       "A modern e-commerce shopping application with personalized recommendations, seamless checkout, and social shopping features for a delightful retail experience.",
     image: "/project/WeeSeeShop_thumbnail.png",
@@ -304,6 +316,7 @@ export const projects: Project[] = [
   {
     slug: "chill-delish",
     title: "Chill Delish",
+    subTitle: "Premium Food Delivery & Restaurant Discovery",
     description:
       "A premium food delivery and restaurant discovery app with real-time order tracking, personalized taste profiles, and a visually appetizing user interface.",
     image: "/project/Chilldeli.png",
@@ -328,5 +341,31 @@ export const projects: Project[] = [
     keyTakeaway:
       "Premium visual design in food apps directly influences perceived food quality and willingness to order — making UI investment a key driver of business metrics.",
     galleryImages: ["/project/Chilldeli.png"],
+  },
+  {
+    slug: "Pepejeans",
+    title: "Pepe Jeans",
+    subTitle: "Modern Fashion E-commerce Platform",
+    description:
+      "Pepe Jeans is a modern fashion e-commerce platform designed to deliver a seamless online shopping experience for apparel, footwear, and accessories. The project focuses on creating a premium, responsive, and user-centric interface that simplifies product discovery, enhances customer engagement, and streamlines the complete shopping journey.",
+    image: "/project/Pepejeans thumbnail.png",
+    type: "UI/UX Design",
+    category: "Web",
+    tech: ["Figma", "Adobe Photoshop"],
+    link: "",
+    clientOverview: "Pepe Jeans is an iconic denim and fashion brand that needed a refreshed digital presence to better reflect its brand identity and meet modern e-commerce expectations.",
+    challenge: "Redesign the Pepe Jeans e-commerce experience to create a premium, immersive brand environment that seamlessly blends fashion inspiration with effortless shopping, while maintaining brand consistency across desktop and mobile.",
+    solution: [
+      "Designed a refreshed visual identity with a modern, sophisticated color palette, editorial-style typography, and premium-feeling UI components that reflect Pepe Jeans' fashion-forward positioning.",
+      "Created high-impact lifestyle photography integration across the interface, using immersive hero sections, full-width product imagery, and curated editorial layouts to inspire browsing.",
+      "Developed seamless product discovery paths through intuitive category navigation, prominent search with visual suggestions, and personalized recommendations that adapt to user preferences.",
+      "Architected the visual design for automated PDF processing pipelines with progress tracking and document preview capabilities."
+    ],
+    results: [
+      { value: "20%", label: "Increase in conversion rate from mobile devices" },
+      { value: "15%", label: "Reduction in bounce rate across product pages" }
+    ],
+    keyTakeaway: "By blending high-quality visuals, intuitive navigation, and seamless functionality, Pepe Jeans' redesigned e-commerce platform successfully merges fashion inspiration with effortless shopping, creating a premium brand experience that drives both engagement and conversion.",
+    galleryImages: ["/project/Pepejeans thumbnail.png"],
   },
 ];

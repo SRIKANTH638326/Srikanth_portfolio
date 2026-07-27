@@ -25,7 +25,8 @@ const About = () => {
         {/* Large Quote / Bio */}
         <div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[34px] opacity-80 font-semibold text-[#000000] leading-tight tracking-tight max-w-[100%]">
-            UI/UX Designer with 1.3+ years of experience creating user-centered digital experiences for web and mobile applications. Skilled in user research, wireframing, prototyping, interaction design, design systems, and usability optimization. Passionate about solving complex problems through intuitive and visually engaging interfaces that balance user needs with business objectives.
+            Over the last 1.5+ years, I've worked on SaaS platforms, enterprise dashboards, HRMS, LMS, mobile apps, and web products, helping transform ideas into intuitive digital experiences.
+            My work spans the entire design process—from user research and information architecture to wireframes, prototypes, design systems, accessibility, and developer handoff. I also use AI-powered workflows to accelerate design without compromising quality.
           </h2>
         </div>
 

@@ -599,7 +599,7 @@ export default function CaseStudyPage() {
           <span className="cs-badge">Case Study</span>
           <div className="cs-hero-grid">
             <div>
-              <h1 className="cs-hero-title">{project.title}</h1>
+              <h1 className="cs-hero-title">{project.subTitle}</h1>
             </div>
             <div>
               <p className="cs-hero-desc">{project.description}</p>

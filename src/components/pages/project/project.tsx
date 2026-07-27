@@ -53,7 +53,7 @@ const Projects = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {filteredProjects.map((project) => (
             <Link
-              key={project.slug}
+              key={project.title}
               href={`/case-study/${project.slug}`}
               className="flex flex-col group cursor-pointer no-underline"
             >
