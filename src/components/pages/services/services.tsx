@@ -42,7 +42,7 @@ const Services = () => {
             </h3>
 
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-extrabold text-black leading-[1.05] tracking-tight">
-              WHAT I'M <br />
+              WHAT I&apos;M <br />
               OFFERING
             </h2>
           </div>
