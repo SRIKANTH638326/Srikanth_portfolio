@@ -11,10 +11,9 @@ const Contact = () => {
     "Mobile App",
     "Website Design",
     "Branding",
-    "Webflow development",
     "App design",
     "Graphic design",
-    "Wordpress",
+    "Web development",
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

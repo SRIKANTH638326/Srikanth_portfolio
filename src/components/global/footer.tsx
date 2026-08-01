@@ -1,6 +1,6 @@
 'use client';
 
-import { Facebook, Instagram, Linkedin, Github } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Github, } from 'lucide-react';
 
 const Footer = () => {
   const navLinks = [
@@ -66,7 +66,7 @@ const Footer = () => {
             <a href="#" className="hover:text-[#007ABC] transition-colors">
               <Instagram size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/srikanth-c-270b00347/" className="hover:text-[#007ABC] transition-colors">
+            <a href="https://www.linkedin.com/in/srikanthc061/" className="hover:text-[#007ABC] transition-colors">
               <Linkedin size={20} fill="currentColor" strokeWidth={0} />
             </a>
             <a href="https://github.com/SRIKANTH638326" className="hover:text-[#007ABC] transition-colors">

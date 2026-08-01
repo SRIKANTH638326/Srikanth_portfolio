@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import BackToTop from "@/components/global/Backtotop";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,13 +20,10 @@ export const metadata: Metadata = {
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000"
   ),
-  title: "Srikanth C | UI/UX Designer",
+  title: "Srikanth C | UI/UX Product Designer",
   description:
-    "UI/UX Designer passionate about creating fast, scalable, and intuitive digital experiences.",
+    "UI/UX Product Designer passionate about creating fast, scalable, and intuitive digital experiences.",
 };
-
-
-import { Toaster } from "sonner";
 
 export default function RootLayout({
   children,
@@ -37,9 +36,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FCFBF9]`}
       >
         {children}
+
+        {/* Back to Top Button */}
+        <BackToTop />
+
+        {/* Toast Notifications */}
         <Toaster position="top-right" richColors />
       </body>
     </html>
   );
 }
-
