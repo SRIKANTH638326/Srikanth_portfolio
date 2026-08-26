@@ -86,7 +86,7 @@ const Navbar = () => {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/Srikanth_C_UIUX_Product_Designer_Resume.pdf";
+    link.href = "/Srikanth_C_UIUX_Product_Designer_Resume (1).pdf";
     link.setAttribute("download", "SrikanthCV.pdf");
     document.body.appendChild(link);
     link.click();
